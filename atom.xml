@@ -6,7 +6,7 @@
   <link href="https://tszhong0411.vercel.app/atom.xml" rel="self"/>
   
   <link href="https://tszhong0411.vercel.app/"/>
-  <updated>2021-03-03T15:45:22.462Z</updated>
+  <updated>2021-03-04T15:05:11.912Z</updated>
   <id>https://tszhong0411.vercel.app/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Matery 黑暗模式教程</title>
+    <link href="https://tszhong0411.vercel.app/posts/215d.html"/>
+    <id>https://tszhong0411.vercel.app/posts/215d.html</id>
+    <published>2021-03-04T14:32:58.000Z</published>
+    <updated>2021-03-04T15:05:11.912Z</updated>
+    
+    
+    <summary type="html">Matery 黑暗模式教程，可儲存用戶紀錄。</summary>
+    
+    
+    
+    <category term="教學" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/"/>
+    
+    
+    <category term="Hexo" scheme="https://tszhong0411.vercel.app/tags/Hexo/"/>
+    
+    <category term="Matery" scheme="https://tszhong0411.vercel.app/tags/Matery/"/>
+    
+  </entry>
   
   <entry>
     <title>Remove branding 000webhost. 100% Working</title>
@@ -381,25 +402,6 @@
     
     
     <summary type="html">使用 Dism++ 優化 Windows</summary>
-    
-    
-    
-    <category term="分享" scheme="https://tszhong0411.vercel.app/categories/%E5%88%86%E4%BA%AB/"/>
-    
-    
-    <category term="工具" scheme="https://tszhong0411.vercel.app/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Snipaste 是一款強大的截圖軟件</title>
-    <link href="https://tszhong0411.vercel.app/posts/a424.html"/>
-    <id>https://tszhong0411.vercel.app/posts/a424.html</id>
-    <published>2021-01-16T05:56:31.000Z</published>
-    <updated>2021-02-17T03:56:40.555Z</updated>
-    
-    
-    <summary type="html">討厭 Windows 自帶的截圖軟件？用 Snipaste 吧！</summary>
     
     
     
