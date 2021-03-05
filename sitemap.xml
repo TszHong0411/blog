@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tszhong0411.vercel.app/log/index.html</loc>
+    
+    <lastmod>2021-03-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tszhong0411.vercel.app/posts/215d.html</loc>
     
     <lastmod>2021-03-04</lastmod>
@@ -47,13 +54,6 @@
     <loc>https://tszhong0411.vercel.app/friendcircle/index.html</loc>
     
     <lastmod>2021-02-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tszhong0411.vercel.app/log/index.html</loc>
-    
-    <lastmod>2021-02-26</lastmod>
     
   </url>
   
