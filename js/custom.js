@@ -53,7 +53,7 @@ document.addEventListener("visibilitychange", function () {
          * Initial language.
          */
         function initLanguage(key) {
-          if (key && typeof calLanguages !== 'undefined' && calLanguages[key]) {
+          if (key &amp;&amp; typeof calLanguages !== 'undefined' &amp;&amp; calLanguages[key]) {
             currentLanguage = key;
           }
         }
@@ -62,7 +62,7 @@ document.addEventListener("visibilitychange", function () {
          * Click handler for next month arrow button.
          */
         function nextMonth() {
-          if (dMonth < 11) {
+          if (dMonth &lt; 11) {
             dMonth++;
           } else {
             dMonth = 0;
@@ -76,7 +76,7 @@ document.addEventListener("visibilitychange", function () {
          * Click handler for previous month arrow button.
          */
         function previousMonth() {
-          if (dMonth > 0) {
+          if (dMonth &gt; 0) {
             dMonth--;
           } else {
             dMonth = 11;
@@ -112,7 +112,7 @@ document.addEventListener("visibilitychange", function () {
          * Load all month's posts.
          */
         function loadAllPosts() {
-          if (settings.url != null && settings.url != '') {
+          if (settings.url != null &amp;&amp; settings.url != '') {
             if (allPosts === null) {
               $.ajax({
                 url: settings.url,
@@ -180,19 +180,19 @@ document.addEventListener("visibilitychange", function () {
           }
     
           //If no posts in the current month, and before (or after) the current month yet not published articles, then the response to click previous month's (or next month's) event don't need to parse months array
-          if (current.posts.length === 0 && (current.prev === null && current.next !== null && current.next.getTime() > time || current.next === null && current.prev !== null && current.prev.getTime() < time)) {
+          if (current.posts.length === 0 &amp;&amp; (current.prev === null &amp;&amp; current.next !== null &amp;&amp; current.next.getTime() &gt; time || current.next === null &amp;&amp; current.prev !== null &amp;&amp; current.prev.getTime() &lt; time)) {
             return false;
           }
     
           current.posts = [];
     
-          for (var i = 0; i < months.length; i++) {
+          for (var i = 0; i &lt; months.length; i++) {
             var cTime = months[i].getTime();
             if (time === cTime) {
               current.prev = i === 0 ? null : months[i - 1];
               current.next = i === months.length - 1 ? null : months[i + 1];
               return true;
-            } else if (time < cTime) {
+            } else if (time &lt; cTime) {
               current.prev = i === 0 ? null : months[i - 1];
               current.next = months[i];
               break;
@@ -234,24 +234,24 @@ document.addEventListener("visibilitychange", function () {
         function draw() {
           loadPosts();
           var dWeekDayOfMonthStart = new Date(dYear, dMonth, 1).getDay() - settings.weekOffset;
-          if (dWeekDayOfMonthStart <= 0) {
+          if (dWeekDayOfMonthStart &lt;= 0) {
             dWeekDayOfMonthStart = 6 - ((dWeekDayOfMonthStart + 1) * -1);
           }
     
           var dLastDayOfMonth = new Date(dYear, dMonth + 1, 0).getDate();
           var dLastDayOfPreviousMonth = new Date(dYear, dMonth, 0).getDate() - dWeekDayOfMonthStart + 1;
     
-          var cHead = $('<div/>').addClass('cal-head');
-          var cNext = $('<div/>');
-          var cPrevious = $('<div/>');
-          var cTitle = $('<div/>').addClass('cal-title');
+          var cHead = $('<div>').addClass('cal-head');
+          var cNext = $('<div>');
+          var cPrevious = $('<div>');
+          var cTitle = $('<div>').addClass('cal-title');
           cPrevious.html(settings.headArrows.previous);
           cNext.html(settings.headArrows.next);
           curDate = new Date(Date.UTC(dYear, dMonth));
           if (current.posts.length === 0) {
             cTitle.html(simpleDateFormat(curDate, settings.titleFormat));
           } else {
-            cTitleLink = $('<a/>').attr('href', simpleDateFormat(curDate, settings.titleLinkFormat))
+            cTitleLink = $('<a>').attr('href', simpleDateFormat(curDate, settings.titleLinkFormat))
               .attr('title', simpleDateFormat(curDate, settings.postsMonthTip))
               .html(simpleDateFormat(curDate, settings.titleFormat));
             cTitle.html(cTitleLink);
@@ -264,17 +264,25 @@ document.addEventListener("visibilitychange", function () {
           cHead.append(cTitle);
           cHead.append(cNext);
     
-          var cBody = $('<table/>').addClass('cal');
+          var cBody = $('').addClass('cal');
     
           var dayOfWeek = settings.weekOffset;
-          var cWeekHead = $('<thead/>');
-          var cWeekHeadRow = $('<tr/>');
-          for (var i = 0; i < 7; i++) {
-            if (dayOfWeek > 6) {
+          var cWeekHead = $('');
+          var cWeekHeadRow = $('');
+          for (var i = 0; i &lt; 7; i++) {
+            if (dayOfWeek &gt; 6) {
               dayOfWeek = 0;
             }
     
-            var cWeekDay = $('<th/>').attr('scope', 'col').attr('title', settings.dayOfWeek[dayOfWeek]);
+            var cWeekDay = $('');
+          var cFootRow = $('');
+          var cPrevPosts = $('');
+          var day = 1;
+          var dayOfNextMonth = 1;
+          for (var i = 0; i &lt; 6; i++) {
+            var cWeek = $('');
+            for (var j = 0; j &lt; 7; j++) {
+              var cDay = $('<table><thead><tr><th>').attr('scope', 'col').attr('title', settings.dayOfWeek[dayOfWeek]);
             cWeekDay.html(settings.dayOfWeekShort[dayOfWeek]);
             cWeekHeadRow.append(cWeekDay);
             dayOfWeek++;
@@ -283,11 +291,9 @@ document.addEventListener("visibilitychange", function () {
           cWeekHead.append(cWeekHeadRow);
           cBody.append(cWeekHead);
     
-          var cFoot = $('<tfoot/>');
-          var cFootRow = $('<tr/>');
-          var cPrevPosts = $('<td/>').attr('colspan', 3);
-          var cPad = $('<td/>').html('&nbsp;');
-          var cNextPosts = $('<td/>').attr('colspan', 3);
+          var cFoot = $('</th></tr></thead><tfoot><tr><td>').attr('colspan', 3);
+          var cPad = $('</td><td>').html('&nbsp;');
+          var cNextPosts = $('</td><td>').attr('colspan', 3);
           if (current.prev) {
             cPrevPosts.html(settings.footArrows.previous + settings.months[current.prev.getMonth()])
               .addClass('cal-foot')
@@ -313,18 +319,12 @@ document.addEventListener("visibilitychange", function () {
           cFootRow.append(cNextPosts);
           cFoot.append(cFootRow);
     
-          var cMainPad = $('<tbody/>');
-          var day = 1;
-          var dayOfNextMonth = 1;
-          for (var i = 0; i < 6; i++) {
-            var cWeek = $('<tr/>');
-            for (var j = 0; j < 7; j++) {
-              var cDay = $('<td/>');
-              if (i * 7 + j < dWeekDayOfMonthStart) {
+          var cMainPad = $('</td></tr></tfoot><tbody><tr><td>');
+              if (i * 7 + j &lt; dWeekDayOfMonthStart) {
                 cDay.addClass('cal-gray');
                 cDay.html(dLastDayOfPreviousMonth++);
-              } else if (day <= dLastDayOfMonth) {
-                if (day == dDay && nMonth == dMonth && nYear == dYear) {
+              } else if (day &lt;= dLastDayOfMonth) {
+                if (day == dDay &amp;&amp; nMonth == dMonth &amp;&amp; nYear == dYear) {
                   cDay.addClass('cal-today');
                 }
     
@@ -332,7 +332,7 @@ document.addEventListener("visibilitychange", function () {
                   num: 0,
                   keys: []
                 };
-                for (var k = 0; k < current.posts.length; k++) {
+                for (var k = 0; k &lt; current.posts.length; k++) {
                   var d = new Date(Date.parse(current.posts[k].date));
                   if (d.getDate() == day) {
                     count.keys[count.num++] = k;
@@ -907,4 +907,4 @@ var calLanguages = {
     ],
     dayOfWeek: ['კვირა', 'ორშაბათი', 'სამშაბათი', 'ოთხშაბათი', 'ხუთშაბათი', 'პარასკევი', 'შაბათი']
   },
-};
+};</a></td></tr></tbody></table></a></div></div></div></div>
