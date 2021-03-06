@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tszhong0411.vercel.app/friendcircle/index.html</loc>
+    
+    <lastmod>2021-03-06</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tszhong0411.vercel.app/log/index.html</loc>
     
     <lastmod>2021-03-06</lastmod>
@@ -24,13 +31,6 @@
   
   <url>
     <loc>https://tszhong0411.vercel.app/manifest.json</loc>
-    
-    <lastmod>2021-03-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tszhong0411.vercel.app/friendcircle/index.html</loc>
     
     <lastmod>2021-03-05</lastmod>
     
@@ -508,6 +508,13 @@
   </url>
   
   <url>
+    <loc>https://tszhong0411.vercel.app/tags/Markdown/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tszhong0411.vercel.app/tags/Hexo/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
@@ -523,13 +530,6 @@
   
   <url>
     <loc>https://tszhong0411.vercel.app/tags/PHP/</loc>
-    <lastmod>2021-03-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tszhong0411.vercel.app/tags/Markdown/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
