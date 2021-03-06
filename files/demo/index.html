@@ -15,7 +15,7 @@
     <!-- Javascript 代碼 -->
 	<script type="text/javascript">
 		var setTheme = localStorage.getItem('theme')
-		console.log('theme:', setTheme)
+		console.log('demo-theme:', setTheme)
 		if (setTheme == null){
 			swapStyle('demo-light.css')
 		}else{
@@ -23,7 +23,7 @@
 		}
 		function swapStyle(sheet){
 			document.getElementById('mystylesheet').href = "https://cdn.jsdelivr.net/gh/tszhong0411/cdn/" + sheet
-			localStorage.setItem('theme', sheet)
+			localStorage.setItem('demo-theme', sheet)
 		}
 	</script>
 </body>
