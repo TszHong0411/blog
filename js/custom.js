@@ -1227,8 +1227,7 @@ fetch(githubapiurl)
   });
 
 //手機版更換為svg繪制
-let gitcalendarcanvasbox = document.getElementById("gitcalendarcanvasbox")
-if (gitcalendarcanvasbox&&gitcalendarcanvasbox.offsetWidth < 500) {
+if (document.getElementById("gitcalendarcanvasbox") && gitcalendarcanvasbox.offsetWidth < 500) {
   gitcalendar.simplemode = false
 }
 
