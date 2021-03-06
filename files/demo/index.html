@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo</title>
-    <link id="mystylesheet" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tszhong0411/cdn/demo-light.css">
+    <link id="mystylesheet" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/tszhong0411/cdn@1.1.4/demo-light.css">
 </head>
 <body>
     <div>
@@ -22,7 +22,7 @@
 			swapStyle(setTheme)
 		}
 		function swapStyle(sheet){
-			document.getElementById('mystylesheet').href = sheet
+			document.getElementById('mystylesheet').href = "https://cdn.jsdelivr.net/gh/tszhong0411/cdn/" + sheet
 			localStorage.setItem('theme', sheet)
 		}
 	</script>
