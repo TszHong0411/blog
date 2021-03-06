@@ -1,1 +1,22 @@
-<div><button onclick='swapStyle("demo-light.css")'>光亮模式</button> <button onclick='swapStyle("demo-dark.css")'>黑暗模式</button></div><h1 style="text-align:center">Demo for dark mode and light mode</h1><script>var setTheme=localStorage.getItem("theme");function swapStyle(e){document.getElementById("mystylesheet").href=e,localStorage.setItem("theme",e)}console.log("theme:",setTheme),swapStyle(null==setTheme?"demo-light.css":setTheme)</script>
+
+    <div>
+        <button onclick="swapStyle('demo-light.css')">光亮模式</button>
+        <button onclick="swapStyle('demo-dark.css')">黑暗模式</button>
+    </div>
+    <h1 style="text-align: center;">Demo for dark mode and light mode</h1>
+    <!-- Javascript 代碼 -->
+    <script type="text/javascript">
+        var setTheme = localStorage.getItem('theme')
+        console.log('theme:', setTheme)
+        if (setTheme == null){
+            swapStyle('demo-light.css')
+        }else{
+            swapStyle(setTheme)
+        }
+        function swapStyle(sheet){
+            document.getElementById('mystylesheet').href = sheet
+            localStorage.setItem('theme', sheet)
+        }
+    </script>
+
+
