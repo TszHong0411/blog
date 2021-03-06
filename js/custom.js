@@ -10,8 +10,6 @@ document.addEventListener("visibilitychange", function () {
       }, 3e3))
 });
 
-
-
 /**
  * Calendar - displays a calendar of the current month. Dates appear links if there are posts for that day.
  */
