@@ -1,5 +1,5 @@
 //  Print TszHong's Blog
-console.log("%cTszHong's Blog", "color:red;font-family:system-ui;font-size:50px;-webkit-text-stroke: 1px black;font-weight:bold");
+console.log("%cDon’t enter any code here unless you know what you are doing", "color:red;font-family:system-ui;font-size:35px;-webkit-text-stroke: 1px black;font-weight:bold");
 
 // Interesting browser title
 var OriginTitile = document.title,
