@@ -1035,7 +1035,7 @@ var gitcalendar = new Vue({
     first2date: [],
     montharrbefore: [],
     monthindex: 0,
-    color: "['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c']"
+    color: ['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c']
   },
   methods: {
     selectStyle(data, event) {
