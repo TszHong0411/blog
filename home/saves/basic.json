@@ -2,7 +2,7 @@
   "configs": {
     "topTaskBar": false,
     "sound": false,
-    "wallpaper": "https://cdn.jsdelivr.net/gh/tszhong0411/image/background-2.0.gif",
+    "wallpaper": "https://cdn.jsdelivr.net/gh/tszhong0411/image/neon-wallpaper.jpg",
     "wallpaperBlur": false,
     "wallpaperSlide": false,
     "wallpaperSlideRandom": true,
@@ -15,8 +15,8 @@
     "autoThemeColor": true,
     "wallpapers": [
       {
-        "image": "https://cdn.jsdelivr.net/gh/tszhong0411/image/background-2.0.gif",
-        "preview": "https://cdn.jsdelivr.net/gh/tszhong0411/image/background-2.0.gif"
+        "image": "https://cdn.jsdelivr.net/gh/tszhong0411/image/neon-wallpaper.jpg",
+        "preview": "https://cdn.jsdelivr.net/gh/tszhong0411/image/neon-wallpaper.jpg"
       },
       {
         "image": "/home/res/img/wallpapers/bg1.jpg",
