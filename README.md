@@ -1,7 +1,7 @@
 ## I am 14 years old and I first join Github on 2020/12/05. I hope you can move your fingers and tap Star. Thank you! ٩(^ᴗ^)۶
 
 # TszHong Blog
-[![time tracker](https://wakatime.com/badge/github/TszHong0411/tszhong0411.github.io.svg)](https://wakatime.com/badge/github/TszHong0411/tszhong0411.github.io)
+[![time tracker](https://wakatime.com/badge/github/TszHong0411/blog.svg)](https://wakatime.com/badge/github/TszHong0411/blog)
 ![](https://img.shields.io/badge/Build%20with-VSCode-red)
 ![](https://img.shields.io/badge/Powered%20by-Hexo-brightgreen)
 [![](https://img.shields.io/badge/Theme-Butterfly-blue)](https://github.com/jerryc127/hexo-theme-butterfly)
