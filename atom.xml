@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>TszHong 的 Blog🔥🔥🔥</title>
+  
+  
+  <link href="https://tszhong0411.vercel.app/atom.xml" rel="self"/>
+  
+  <link href="https://tszhong0411.vercel.app/"/>
+  <updated>2021-04-23T18:51:43.945Z</updated>
+  <id>https://tszhong0411.vercel.app/</id>
+  
+  <author>
+    <name>Lai Tsz Hong</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>登入表單</title>
+    <link href="https://tszhong0411.vercel.app/posts/e26c.html"/>
+    <id>https://tszhong0411.vercel.app/posts/e26c.html</id>
+    <published>2021-04-23T18:48:06.000Z</published>
+    <updated>2021-04-23T18:51:43.945Z</updated>
+    
+    
+    <summary type="html">簡單的登入表單</summary>
+    
+    
+    
+    <category term="分享" scheme="https://tszhong0411.vercel.app/categories/%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="css" scheme="https://tszhong0411.vercel.app/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>仿真紅色開關按鈕</title>
+    <link href="https://tszhong0411.vercel.app/posts/976d.html"/>
+    <id>https://tszhong0411.vercel.app/posts/976d.html</id>
+    <published>2021-03-27T11:47:59.000Z</published>
+    <updated>2021-04-23T18:51:01.554Z</updated>
+    
+    
+    <summary type="html">仿真紅色開關按鈕 CSS</summary>
+    
+    
+    
+    <category term="分享" scheme="https://tszhong0411.vercel.app/categories/%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="css" scheme="https://tszhong0411.vercel.app/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Matery 黑暗模式教程</title>
+    <link href="https://tszhong0411.vercel.app/posts/215d.html"/>
+    <id>https://tszhong0411.vercel.app/posts/215d.html</id>
+    <published>2021-03-04T14:32:58.000Z</published>
+    <updated>2021-03-04T15:37:26.000Z</updated>
+    
+    
+    <summary type="html">Matery 黑暗模式教程，可儲存用戶紀錄。</summary>
+    
+    
+    
+    <category term="教學" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/"/>
+    
+    
+    <category term="Hexo" scheme="https://tszhong0411.vercel.app/tags/Hexo/"/>
+    
+    <category term="Matery" scheme="https://tszhong0411.vercel.app/tags/Matery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Remove branding 000webhost. 100% Working</title>
+    <link href="https://tszhong0411.vercel.app/posts/d4b2.html"/>
+    <id>https://tszhong0411.vercel.app/posts/d4b2.html</id>
+    <published>2021-02-24T13:49:07.000Z</published>
+    <updated>2021-03-03T15:45:24.000Z</updated>
+    
+    
+    <summary type="html">REMOVE 000WEBHOST BRANDING 100%</summary>
+    
+    
+    
+    <category term="教學" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/"/>
+    
+    <category term="000webhost" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/000webhost/"/>
+    
+    
+    <category term="秘訣" scheme="https://tszhong0411.vercel.app/tags/%E7%A7%98%E8%A8%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP 自學筆記</title>
+    <link href="https://tszhong0411.vercel.app/posts/68c5.html"/>
+    <id>https://tszhong0411.vercel.app/posts/68c5.html</id>
+    <published>2021-02-18T14:20:38.000Z</published>
+    <updated>2021-02-25T14:38:36.000Z</updated>
+    
+    
+    <summary type="html">PHP 真有趣</summary>
+    
+    
+    
+    <category term="自學" scheme="https://tszhong0411.vercel.app/categories/%E8%87%AA%E5%AD%B8/"/>
+    
+    <category term="PHP" scheme="https://tszhong0411.vercel.app/categories/%E8%87%AA%E5%AD%B8/PHP/"/>
+    
+    
+    <category term="PHP" scheme="https://tszhong0411.vercel.app/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>不要再用Valine了，不安全！</title>
+    <link href="https://tszhong0411.vercel.app/posts/6ba6.html"/>
+    <id>https://tszhong0411.vercel.app/posts/6ba6.html</id>
+    <published>2021-02-17T09:18:27.000Z</published>
+    <updated>2021-02-17T09:45:56.000Z</updated>
+    
+    
+    <summary type="html">Valine 真的不安全</summary>
+    
+    
+    
+    <category term="分享" scheme="https://tszhong0411.vercel.app/categories/%E5%88%86%E4%BA%AB/"/>
+    
+    <category term="建議" scheme="https://tszhong0411.vercel.app/categories/%E5%88%86%E4%BA%AB/%E5%BB%BA%E8%AD%B0/"/>
+    
+    
+    <category term="Valine" scheme="https://tszhong0411.vercel.app/tags/Valine/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>生成重新導向 CODE</title>
+    <link href="https://tszhong0411.vercel.app/posts/1213.html"/>
+    <id>https://tszhong0411.vercel.app/posts/1213.html</id>
+    <published>2021-02-10T20:05:27.000Z</published>
+    <updated>2021-02-17T03:54:26.000Z</updated>
+    
+    
+    <summary type="html">是自動生成的耶</summary>
+    
+    
+    
+    <category term="教學" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/"/>
+    
+    
+    <category term="秘訣" scheme="https://tszhong0411.vercel.app/tags/%E7%A7%98%E8%A8%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>更換網址</title>
+    <link href="https://tszhong0411.vercel.app/posts/2d15.html"/>
+    <id>https://tszhong0411.vercel.app/posts/2d15.html</id>
+    <published>2021-02-10T19:29:18.000Z</published>
+    <updated>2021-04-19T07:26:19.811Z</updated>
+    
+    
+    <summary type="html">github.io to vercel.app</summary>
+    
+    
+    
+    <category term="其他" scheme="https://tszhong0411.vercel.app/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Geek uninstaller 徹底卸載軟件</title>
+    <link href="https://tszhong0411.vercel.app/posts/9b83.html"/>
+    <id>https://tszhong0411.vercel.app/posts/9b83.html</id>
+    <published>2021-02-05T03:27:13.000Z</published>
+    <updated>2021-02-16T04:50:02.000Z</updated>
+    
+    
+    <summary type="html">使用 Geek uninstaller 清除流氓軟件</summary>
+    
+    
+    
+    <category term="教學" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/"/>
+    
+    <category term="軟件" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/%E8%BB%9F%E4%BB%B6/"/>
+    
+    
+    <category term="工具" scheme="https://tszhong0411.vercel.app/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Webpushr 推送博客通知！ (Hexo)</title>
+    <link href="https://tszhong0411.vercel.app/posts/95d6.html"/>
+    <id>https://tszhong0411.vercel.app/posts/95d6.html</id>
+    <published>2021-02-04T01:38:13.000Z</published>
+    <updated>2021-04-19T07:26:24.316Z</updated>
+    
+    
+    <summary type="html">免費博客 New post 推送器</summary>
+    
+    
+    
+    <category term="教學" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/"/>
+    
+    <category term="軟件" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/%E8%BB%9F%E4%BB%B6/"/>
+    
+    
+    <category term="推送器" scheme="https://tszhong0411.vercel.app/tags/%E6%8E%A8%E9%80%81%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Google 404 style</title>
+    <link href="https://tszhong0411.vercel.app/posts/eef2.html"/>
+    <id>https://tszhong0411.vercel.app/posts/eef2.html</id>
+    <published>2021-02-02T13:30:35.000Z</published>
+    <updated>2021-02-17T03:54:34.000Z</updated>
+    
+    
+    <summary type="html">來看看有趣的 Google 404 畫面吧！</summary>
+    
+    
+    
+    <category term="分享" scheme="https://tszhong0411.vercel.app/categories/%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="404 畫面" scheme="https://tszhong0411.vercel.app/tags/404-%E7%95%AB%E9%9D%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>進階黑暗模式教學</title>
+    <link href="https://tszhong0411.vercel.app/posts/afb6.html"/>
+    <id>https://tszhong0411.vercel.app/posts/afb6.html</id>
+    <published>2021-02-01T08:20:41.000Z</published>
+    <updated>2021-02-16T04:52:10.000Z</updated>
+    
+    
+    <summary type="html">進階版黑暗模式教學！</summary>
+    
+    
+    
+    <category term="教學" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/"/>
+    
+    <category term="Dark mode" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/Dark-mode/"/>
+    
+    
+    <category term="教學" scheme="https://tszhong0411.vercel.app/tags/%E6%95%99%E5%AD%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>刪除右鍵菜單中的 使用 Skype 分享</title>
+    <link href="https://tszhong0411.vercel.app/posts/2996.html"/>
+    <id>https://tszhong0411.vercel.app/posts/2996.html</id>
+    <published>2021-01-29T01:23:33.000Z</published>
+    <updated>2021-02-16T04:51:46.000Z</updated>
+    
+    
+    <summary type="html">右鍵菜單中的 使用 Skype 分享 沒有用？刪除它吧！</summary>
+    
+    
+    
+    <category term="教學" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/"/>
+    
+    <category term="Windows" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/Windows/"/>
+    
+    
+    <category term="右鍵菜單" scheme="https://tszhong0411.vercel.app/tags/%E5%8F%B3%E9%8D%B5%E8%8F%9C%E5%96%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新增 Take ownership 教學</title>
+    <link href="https://tszhong0411.vercel.app/posts/7bc0.html"/>
+    <id>https://tszhong0411.vercel.app/posts/7bc0.html</id>
+    <published>2021-01-29T00:21:47.000Z</published>
+    <updated>2021-03-22T04:30:07.597Z</updated>
+    
+    
+    <summary type="html">刪除檔案時有權限問題？用 Take owenership 吧!</summary>
+    
+    
+    
+    <category term="教學" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/"/>
+    
+    <category term="Windows" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/Windows/"/>
+    
+    
+    <category term="秘訣" scheme="https://tszhong0411.vercel.app/tags/%E7%A7%98%E8%A8%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>推薦一個能生成漸變色的網站</title>
+    <link href="https://tszhong0411.vercel.app/posts/915a.html"/>
+    <id>https://tszhong0411.vercel.app/posts/915a.html</id>
+    <published>2021-01-24T19:49:37.000Z</published>
+    <updated>2021-02-17T03:56:26.000Z</updated>
+    
+    
+    <summary type="html">想不到漸變色的組合？來這個網站吧！</summary>
+    
+    
+    
+    <category term="分享" scheme="https://tszhong0411.vercel.app/categories/%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="漸變色" scheme="https://tszhong0411.vercel.app/tags/%E6%BC%B8%E8%AE%8A%E8%89%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解決 Firefox 中 Backspace 返回上一頁功能</title>
+    <link href="https://tszhong0411.vercel.app/posts/1644.html"/>
+    <id>https://tszhong0411.vercel.app/posts/1644.html</id>
+    <published>2021-01-24T09:55:46.000Z</published>
+    <updated>2021-02-08T09:45:56.000Z</updated>
+    
+    
+    <summary type="html">Firefox 中 Backspace 返回上一頁很困擾，來這裏看就對了！</summary>
+    
+    
+    
+    <category term="解難" scheme="https://tszhong0411.vercel.app/categories/%E8%A7%A3%E9%9B%A3/"/>
+    
+    
+    <category term="Firefox" scheme="https://tszhong0411.vercel.app/tags/Firefox/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Console 輸出帶 CSS + Facebook console</title>
+    <link href="https://tszhong0411.vercel.app/posts/2362.html"/>
+    <id>https://tszhong0411.vercel.app/posts/2362.html</id>
+    <published>2021-01-23T19:49:37.000Z</published>
+    <updated>2021-02-09T03:39:40.000Z</updated>
+    
+    
+    <summary type="html">在 Console 輸出自定義文字！</summary>
+    
+    
+    
+    <category term="教學" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/"/>
+    
+    
+    <category term="秘訣" scheme="https://tszhong0411.vercel.app/tags/%E7%A7%98%E8%A8%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>把 Google Map 內嵌到網站</title>
+    <link href="https://tszhong0411.vercel.app/posts/a72e.html"/>
+    <id>https://tszhong0411.vercel.app/posts/a72e.html</id>
+    <published>2021-01-21T11:55:34.000Z</published>
+    <updated>2021-02-17T03:56:20.000Z</updated>
+    
+    
+    <summary type="html">內嵌 Google map</summary>
+    
+    
+    
+    <category term="教學" scheme="https://tszhong0411.vercel.app/categories/%E6%95%99%E5%AD%B8/"/>
+    
+    
+    <category term="內嵌" scheme="https://tszhong0411.vercel.app/tags/%E5%85%A7%E5%B5%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Memory cleaner 定期清理 RAM 的小工具</title>
+    <link href="https://tszhong0411.vercel.app/posts/8aee.html"/>
+    <id>https://tszhong0411.vercel.app/posts/8aee.html</id>
+    <published>2021-01-18T14:40:41.000Z</published>
+    <updated>2021-02-17T03:56:38.000Z</updated>
+    
+    
+    <summary type="html">清理 RAM 工具</summary>
+    
+    
+    
+    <category term="分享" scheme="https://tszhong0411.vercel.app/categories/%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="工具" scheme="https://tszhong0411.vercel.app/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自定義頂部進度條</title>
+    <link href="https://tszhong0411.vercel.app/posts/43eb.html"/>
+    <id>https://tszhong0411.vercel.app/posts/43eb.html</id>
+    <published>2021-01-17T10:15:21.000Z</published>
+    <updated>2021-02-08T09:30:08.000Z</updated>
+    
+    
+    <summary type="html">取代瀏覽器內建的載入進度條</summary>
+    
+    
+    
+    <category term="分享" scheme="https://tszhong0411.vercel.app/categories/%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="進度條" scheme="https://tszhong0411.vercel.app/tags/%E9%80%B2%E5%BA%A6%E6%A2%9D/"/>
+    
+  </entry>
+  
+</feed>

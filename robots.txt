@@ -1,0 +1,12 @@
+# robots.txt for https://tszhong0411.vercel.app
+
+User-agent: * Allow: /
+Allow: /archives/
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+Sitemap: https://tszhong0411.vercel.app/sitemap.xml

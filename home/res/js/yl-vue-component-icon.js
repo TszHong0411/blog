@@ -1,0 +1,1 @@
+"use strict";Vue.component("yl-icon",{template:"#tpl-icon",props:["icon","drawer","badge","apps","nobg","img"],data:function(){return{icon:{},badge:0,drawer:!1,nobg:!1,img:""}},methods:{badgeText:function(e){return isNaN(e)?e:99<e?"99+":parseInt(e)}}});
