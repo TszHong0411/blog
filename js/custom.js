@@ -1,15 +1,6 @@
 //  Print TszHong's Blog
 console.log("%cDon’t enter any code here unless you know what you are doing", "color:red;font-family:system-ui;font-size:35px;-webkit-text-stroke: 1px black;font-weight:bold");
 
-// Interesting browser title
-var OriginTitile = document.title,
-      st;
-document.addEventListener("visibilitychange", function () {
-      document.hidden ? (document.title = "(ꐦ ಠ皿ಠ ) 壞蛋去哪裡", clearTimeout(st)) : (document.title = "(≧▽≦) 回來了", st = setTimeout(function () {
-            document.title = OriginTitile
-      }, 3e3))
-});
-
 /**
  * Calendar - displays a calendar of the current month. Dates appear links if there are posts for that day.
  */

@@ -494,13 +494,6 @@
   </url>
   
   <url>
-    <loc>https://tszhong0411.vercel.app/tags/404-%E7%95%AB%E9%9D%A2/</loc>
-    <lastmod>2021-05-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tszhong0411.vercel.app/tags/%E5%85%A7%E5%B5%8C/</loc>
     <lastmod>2021-05-09</lastmod>
     <changefreq>daily</changefreq>
@@ -508,7 +501,7 @@
   </url>
   
   <url>
-    <loc>https://tszhong0411.vercel.app/tags/GTA-V/</loc>
+    <loc>https://tszhong0411.vercel.app/tags/404-%E7%95%AB%E9%9D%A2/</loc>
     <lastmod>2021-05-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -516,6 +509,13 @@
   
   <url>
     <loc>https://tszhong0411.vercel.app/tags/%E6%BC%B8%E8%AE%8A%E8%89%B2/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tszhong0411.vercel.app/tags/GTA-V/</loc>
     <lastmod>2021-05-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -599,14 +599,14 @@
   </url>
   
   <url>
-    <loc>https://tszhong0411.vercel.app/tags/Tinypng/</loc>
+    <loc>https://tszhong0411.vercel.app/tags/%E6%8E%A8%E9%80%81%E5%99%A8/</loc>
     <lastmod>2021-05-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tszhong0411.vercel.app/tags/%E6%8E%A8%E9%80%81%E5%99%A8/</loc>
+    <loc>https://tszhong0411.vercel.app/tags/Tinypng/</loc>
     <lastmod>2021-05-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
