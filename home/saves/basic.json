@@ -2,7 +2,7 @@
   "configs": {
     "topTaskBar": false,
     "sound": false,
-    "wallpaper": "https://cdn.jsdelivr.net/gh/tszhong0411/image/neon-wallpaper.jpg",
+    "wallpaper": "https://cdn.jsdelivr.net/gh/tszhong0411/image/blog_home_wallpaper.png",
     "wallpaperBlur": false,
     "wallpaperSlide": false,
     "wallpaperSlideRandom": true,
@@ -15,8 +15,8 @@
     "autoThemeColor": true,
     "wallpapers": [
       {
-        "image": "https://cdn.jsdelivr.net/gh/tszhong0411/image/neon-wallpaper.jpg",
-        "preview": "https://cdn.jsdelivr.net/gh/tszhong0411/image/neon-wallpaper.jpg"
+        "image": "https://cdn.jsdelivr.net/gh/tszhong0411/image/blog_home_wallpaper.png",
+        "preview": "https://cdn.jsdelivr.net/gh/tszhong0411/image/blog_home_wallpaper.png"
       },
       {
         "image": "/home/res/img/wallpapers/bg1.jpg",
@@ -155,7 +155,7 @@
       "desc": "TszHong 的 Blog",
       "icon": {
         "type": "img",
-        "content": "https://tszhong0411.vercel.app/img/logo.png"
+        "content": "https://cdn.jsdelivr.net/gh/tszhong0411/image/favicon.png"
       },
       "openMode": "normal",
       "plugin": false,
