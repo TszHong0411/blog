@@ -480,6 +480,13 @@
   </url>
   
   <url>
+    <loc>https://tszhong.top/tags/%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2021-05-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tszhong.top/tags/Firefox/</loc>
     <lastmod>2021-05-10</lastmod>
     <changefreq>daily</changefreq>
@@ -494,7 +501,7 @@
   </url>
   
   <url>
-    <loc>https://tszhong.top/tags/%E6%8A%80%E5%B7%A7/</loc>
+    <loc>https://tszhong.top/tags/%E5%85%A7%E5%B5%8C/</loc>
     <lastmod>2021-05-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -502,13 +509,6 @@
   
   <url>
     <loc>https://tszhong.top/tags/%E6%BC%B8%E8%AE%8A%E8%89%B2/</loc>
-    <lastmod>2021-05-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tszhong.top/tags/%E5%85%A7%E5%B5%8C/</loc>
     <lastmod>2021-05-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -529,7 +529,7 @@
   </url>
   
   <url>
-    <loc>https://tszhong.top/tags/Markdown/</loc>
+    <loc>https://tszhong.top/tags/PHP/</loc>
     <lastmod>2021-05-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -550,7 +550,7 @@
   </url>
   
   <url>
-    <loc>https://tszhong.top/tags/PHP/</loc>
+    <loc>https://tszhong.top/tags/Markdown/</loc>
     <lastmod>2021-05-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -657,14 +657,14 @@
   </url>
   
   <url>
-    <loc>https://tszhong.top/categories/%E8%A7%A3%E9%9B%A3/</loc>
+    <loc>https://tszhong.top/categories/%E6%95%99%E5%AD%B8/%E8%BB%9F%E4%BB%B6/</loc>
     <lastmod>2021-05-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tszhong.top/categories/%E6%95%99%E5%AD%B8/%E8%BB%9F%E4%BB%B6/</loc>
+    <loc>https://tszhong.top/categories/%E8%A7%A3%E9%9B%A3/</loc>
     <lastmod>2021-05-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
