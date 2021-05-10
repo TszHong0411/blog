@@ -1,1 +1,0 @@
-"use strict";YL.onLoad(function(){var a,t=Yuri2.parseURL().params.load;t===YL.static.localStorageName&&localStorage.getItem(YL.static.localStorageName)?YL.init():(t===YL.static.localStorageName&&(a="basic"),a=/^\w+$/.test(a=a||t||"basic")?"/home/saves/"+a+".json":a,Yuri2.loadContentFromUrl(a,"GET",function(a,t){a?alert("YLUI讀取配置錯誤，初始化失敗"):(t=JSON.parse(t),YL.init(t))}))});
