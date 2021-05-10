@@ -1231,3 +1231,8 @@ window.onscroll = function() {
     document.querySelector('.angle-wrapper').style.display = 'none'
   }
 };
+
+// 修復 nav 問題
+if (window.matchMedia("(max-width: 817px)").matches) {
+  document.querySelector("#nav").classList.add("hide-menu")
+};
