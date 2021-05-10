@@ -195,7 +195,7 @@ webpushr('setup',{'key':'BCOFWopcVaGhogwpCcQUSN8NOo-WWJiD1i15fl8NptnIZNeWplLITg5
   function initWaline () {
     const waline = new Waline(Object.assign({
       el: '#waline-wrap',
-      serverURL: 'https://waline-tszhong.vercel.app',
+      serverURL: 'https://waline.tszhong.tpp',
       avatar: 'monsterid',
       path: location.pathname,
       emojiCDN: '',
@@ -301,7 +301,7 @@ if ('Waline' === 'Disqus' || !false) {
     const loadWaline = () => {
       Waline.Widget.RecentComments({
         el: '#card-newest-comments .aside-list',
-        serverURL: 'https://waline-tszhong.vercel.app',
+        serverURL: 'https://waline.tszhong.tpp',
         count: 6
       }).then(comments => {
         const walineArray = comments.map(function (e) {
