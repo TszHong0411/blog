@@ -1,4 +1,4 @@
-# robots.txt for https://tszhong.top
+# robots.txt for https://hexo.tszhong.top
 
 User-agent: * Allow: /
 Allow: /archives/
@@ -9,4 +9,4 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://tszhong.top/sitemap.xml
+Sitemap: https://hexo.tszhong.top/sitemap.xml
