@@ -1052,7 +1052,7 @@ var gitcalendar = new Vue({
     },
   }
 });
-var apiurl = 'calendar.tszhong.top' ? 'https://calendar.tszhong.top/api?' : 'https://githubapi.ryanchristian.dev/user/'
+var apiurl = 'tszhong.vercel.app' ? 'https://tszhong.vercel.app/api?' : 'https://githubapi.ryanchristian.dev/user/'
 var githubapiurl = apiurl + gitcalendar.user;
 //canvas繪圖
 function responsiveChart() {

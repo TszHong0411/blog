@@ -18,15 +18,15 @@
 
 # Screenshot | Light mode
 
-[![](https://cdn.jsdelivr.net/gh/tszhong0411/image/siteshot-home.png)](https://hexo.tszhong.top)
+[![](https://cdn.jsdelivr.net/gh/tszhong0411/image/siteshot-home.png)](https://tszhong.vercel.app)
 
 
-[![](https://cdn.jsdelivr.net/gh/tszhong0411/image/siteshot-about.png)](https://hexo.tszhong.top)
+[![](https://cdn.jsdelivr.net/gh/tszhong0411/image/siteshot-about.png)](https://tszhong.vercel.app)
 
 ---
 
 # Screenshot | Dark mode
 
-[![](https://cdn.jsdelivr.net/gh/tszhong0411/image/siteshot-home-dark.png)](https://hexo.tszhong.top)
+[![](https://cdn.jsdelivr.net/gh/tszhong0411/image/siteshot-home-dark.png)](https://tszhong.vercel.app)
 
-[![](https://cdn.jsdelivr.net/gh/tszhong0411/image/siteshot-about-dark.png)](https://hexo.tszhong.top)
+[![](https://cdn.jsdelivr.net/gh/tszhong0411/image/siteshot-about-dark.png)](https://tszhong.vercel.app)
