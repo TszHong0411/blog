@@ -6,7 +6,7 @@
   <link href="https://tszhong.top/atom.xml" rel="self"/>
   
   <link href="https://tszhong.top/"/>
-  <updated>2021-05-03T03:38:43.329Z</updated>
+  <updated>2021-05-12T03:49:29.750Z</updated>
   <id>https://tszhong.top/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>更換域名</title>
+    <link href="https://tszhong.top/posts/3085.html"/>
+    <id>https://tszhong.top/posts/3085.html</id>
+    <published>2021-05-12T03:25:29.000Z</published>
+    <updated>2021-05-12T03:49:29.750Z</updated>
+    
+    
+    <summary type="html">Namesilo 上買的 tszhong.top</summary>
+    
+    
+    
+    <category term="其他" scheme="https://tszhong.top/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>GTA V Menyoo 修改器教學</title>
@@ -392,25 +409,6 @@
     
     
     <category term="內嵌" scheme="https://tszhong.top/tags/%E5%85%A7%E5%B5%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Memory cleaner 定期清理 RAM 的小工具</title>
-    <link href="https://tszhong.top/posts/8aee.html"/>
-    <id>https://tszhong.top/posts/8aee.html</id>
-    <published>2021-01-18T14:40:41.000Z</published>
-    <updated>2021-02-17T03:56:38.000Z</updated>
-    
-    
-    <summary type="html">清理 RAM 工具</summary>
-    
-    
-    
-    <category term="分享" scheme="https://tszhong.top/categories/%E5%88%86%E4%BA%AB/"/>
-    
-    
-    <category term="工具" scheme="https://tszhong.top/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
