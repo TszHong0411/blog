@@ -902,7 +902,7 @@ var calLanguages = {
 var mykey = {
   weather: 'efc89c3ffc8066e43ec72767c8d15d79' //改為你從OpenWeather獲取的API密鑰
 };
-var locationurl = 'http://ip-api.com/json/';
+var locationurl = '//ip-api.com/json/';
 var cityname = '';
 var weatherurl = '';
 var userip = '';
