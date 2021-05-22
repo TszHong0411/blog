@@ -899,7 +899,6 @@ var calLanguages = {
 };
 
 // Clock JS
-console.log(returnCitySN["cip"])
 fetch('https://wttr.in/'+returnCitySN["cip"]+'?format="%l+\\+%c+\\+%t+\\+%h"').then(res=>res.text()).then(
     data => {
         var res_text = data.replace(/"/g,'').replace(/\+/g,'').replace(/,/g,'\\').replace(/ /g,'').replace(/°C/g,'');
@@ -956,10 +955,7 @@ fetch('https://wttr.in/'+returnCitySN["cip"]+'?format="%l+\\+%c+\\+%t+\\+%h"').t
         
            var timerID = setInterval(updateTime, 1000);
            updateTime();
-           
-       
-
-        console.log(res_list)
+          
 
     }
 )
