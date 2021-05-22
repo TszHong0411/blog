@@ -899,93 +899,71 @@ var calLanguages = {
 };
 
 // Clock JS
-var mykey = {
-  weather: 'efc89c3ffc8066e43ec72767c8d15d79' //改為你從OpenWeather獲取的API密鑰
-};
-var locationurl = 'https://extreme-ip-lookup.com/json/';
-var cityname = '';
-var weatherurl = '';
-var userip = '';
-var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-
-fetch(locationurl)
-  .then(data => data.json())
-  .then(data => {
-    //console.log(data);
-    cityname = data.city;
-    if (typeof data.city == "undefined") {
-      cityname = data.region;
-    };
-    if (typeof data.region == "undefined") {
-      cityname = data.country;
-    };
-    userip = data.query;
-    weatherurl = 'https://api.openweathermap.org/data/2.5/weather/?q=' + cityname + '&units=metric&appid=' + mykey.weather;
-    getweatherdata();
-  })
-  .catch(function(error) {
-    console.log(error);
-  });
-
-function getweatherdata() {
-  fetch(weatherurl)
-    .then(data => data.json())
-    .then(data => {
-      //console.log(data);
-      clock.weatherimg = 'https://cdn.jsdelivr.net/gh/tszhong0411/image/' + data.weather[0].icon + '.png';
-      clock.temperature = data.main.temp + "*C";
-      clock.humidity = data.main.humidity + "%";
-      clock.ip = userip;
-      clock.humidityimg = 'https://cdn.jsdelivr.net/gh/tszhong0411/image/hu.png';
-      clock.city = data.name;
-      var timerID = setInterval(updateTime, 1000);
-      updateTime();
-      clock.clockshow = true;
-
-      function updateTime() {
-        var cd = new Date();
-        clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
-        clock.date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth() + 1, 2) + '-' + zeroPadding(cd.getDate(), 2) + ' ' + week[cd.getDay()];
-        var hamorpm = cd.getHours();
-        var str;
-        if (hamorpm > 12) {
-          hamorpm -= 12;
-          str = " PM";
-        } else {
-          str = " AM";
+console.log(returnCitySN["cip"])
+fetch('https://wttr.in/'+returnCitySN["cip"]+'?format="%l+\\+%c+\\+%t+\\+%h"').then(res=>res.text()).then(
+    data => {
+        var res_text = data.replace(/"/g,'').replace(/\+/g,'').replace(/,/g,'\\').replace(/ /g,'').replace(/°C/g,'');
+        res_list = res_text.split('\\');
+        var clock_box = document.getElementById('hexo_electric_clock');
+        clock_box_html = `  
+  <div class="clock-row">
+<span id="card-clock-clockdate" class="card-clock-clockdate"></span>
+<span class="card-clock-weather">${res_list[2]} ${res_list[3]} *C</span>
+<span class="card-clock-humidity">💧 ${res_list[4]}</span>
+</div>
+  <div class="clock-row"><span id="card-clock-time" class="card-clock-time"></span></div>
+  
+  <div class="clock-row">
+  <span class="card-clock-ip">${returnCitySN["cip"]}</span>
+<span class="card-clock-location">${res_list[0]}</span>
+  <span id="card-clock-dackorlight" class="card-clock-dackorlight"></span>
+</div>
+`;
+        var week = ['SUN', 'MON', 'TUE', 'WED','THU' ,'FRI', 'SAT'];
+        var card_clock_loading_dom = document.getElementById('card-clock-loading');
+        card_clock_loading_dom.innerHTML='';
+        clock_box.innerHTML= clock_box_html;
+        function updateTime() {
+            var cd = new Date();
+            var card_clock_time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
+            var card_clock_date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth()+1, 2) + '-' + zeroPadding(cd.getDate(), 2) + ' '+ week[cd.getDay()];
+            var card_clock_dackorlight = cd.getHours();
+            var card_clock_dackorlight_str;
+            if(card_clock_dackorlight >12) {
+                card_clock_dackorlight -= 12;
+                card_clock_dackorlight_str = " PM";
+            }else{
+                card_clock_dackorlight_str = " AM";
+            }
+            if(document.getElementById('card-clock-time')){
+            var card_clock_time_dom = document.getElementById('card-clock-time');
+            var card_clock_date_dom = document.getElementById('card-clock-clockdate');
+            var card_clock_dackorlight_dom = document.getElementById('card-clock-dackorlight');
+            card_clock_time_dom.innerHTML= card_clock_time;
+            card_clock_date_dom.innerHTML= card_clock_date;
+            card_clock_dackorlight_dom.innerHTML= card_clock_dackorlight_str
+                }
         }
-        clock.daylight = str
-      };
 
-      function zeroPadding(num, digit) {
-        var zero = '';
-        for (var i = 0; i < digit; i++) {
-          zero += '0';
+        function zeroPadding(num, digit) {
+            var zero = '';
+            for(var i = 0; i < digit; i++) {
+                zero += '0';
+            }
+            return (zero + num).slice(-digit);
         }
-        return (zero + num).slice(-digit);
-      };
-      updateTime();
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
-};
-var clock = new Vue({
-  el: '#clock',
-  data: {
-    ip: '',
-    time: '',
-    weatherimg: '',
-    temperature: '',
-    humidityimg: '',
-    humidity: '',
-    usaqi: '',
-    city: '',
-    date: '',
-    daylight: '',
-    clockshow: 'false'
-  },
-});
+        
+        
+           var timerID = setInterval(updateTime, 1000);
+           updateTime();
+           
+       
+
+        console.log(res_list)
+
+    }
+)
+
 
 var gitcalendar = new Vue({
   el: '#gitcalendar',
