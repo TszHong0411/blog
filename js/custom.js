@@ -907,7 +907,7 @@ fetch('https://wttr.in/'+returnCitySN["cip"]+'?format="%l+\\+%c+\\+%t+\\+%h"').t
         clock_box_html = `  
   <div class="clock-row">
 <span id="card-clock-clockdate" class="card-clock-clockdate"></span>
-<span class="card-clock-weather">${res_list[2]} ${res_list[3]} *C</span>
+<span class="card-clock-weather">${res_list[2]} ${res_list[3]} °C</span>
 <span class="card-clock-humidity">💧 ${res_list[4]}</span>
 </div>
   <div class="clock-row"><span id="card-clock-time" class="card-clock-time"></span></div>
