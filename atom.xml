@@ -6,7 +6,7 @@
   <link href="https://tszhong.top/atom.xml" rel="self"/>
   
   <link href="https://tszhong.top/"/>
-  <updated>2021-05-12T03:49:29.750Z</updated>
+  <updated>2021-06-04T06:17:57.173Z</updated>
   <id>https://tszhong.top/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Python Donut</title>
+    <link href="https://tszhong.top/posts/7bad.html"/>
+    <id>https://tszhong.top/posts/7bad.html</id>
+    <published>2021-06-04T06:11:24.000Z</published>
+    <updated>2021-06-04T06:17:57.173Z</updated>
+    
+    
+    <summary type="html">Donut in Python</summary>
+    
+    
+    
+    <category term="Coding" scheme="https://tszhong.top/categories/Coding/"/>
+    
+    
+    <category term="Python" scheme="https://tszhong.top/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>更換域名</title>
     <link href="https://tszhong.top/posts/3085.html"/>
     <id>https://tszhong.top/posts/3085.html</id>
     <published>2021-05-12T03:25:29.000Z</published>
-    <updated>2021-05-12T03:49:29.750Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">Namesilo 上買的 tszhong.top</summary>
@@ -38,7 +57,7 @@
     <link href="https://tszhong.top/posts/86f.html"/>
     <id>https://tszhong.top/posts/86f.html</id>
     <published>2021-05-03T03:20:26.000Z</published>
-    <updated>2021-05-03T03:38:43.329Z</updated>
+    <updated>2021-06-04T06:18:34.087Z</updated>
     
     
     <summary type="html">GTA V Menyoo 真強大</summary>
@@ -59,7 +78,7 @@
     <link href="https://tszhong.top/posts/e26c.html"/>
     <id>https://tszhong.top/posts/e26c.html</id>
     <published>2021-04-23T18:48:06.000Z</published>
-    <updated>2021-04-23T18:51:43.945Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">簡單的登入表單</summary>
@@ -78,7 +97,7 @@
     <link href="https://tszhong.top/posts/976d.html"/>
     <id>https://tszhong.top/posts/976d.html</id>
     <published>2021-03-27T11:47:59.000Z</published>
-    <updated>2021-04-23T18:51:01.554Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">仿真紅色開關按鈕 CSS</summary>
@@ -97,7 +116,7 @@
     <link href="https://tszhong.top/posts/215d.html"/>
     <id>https://tszhong.top/posts/215d.html</id>
     <published>2021-03-04T14:32:58.000Z</published>
-    <updated>2021-03-04T15:37:26.000Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">Matery 黑暗模式教程，可儲存用戶紀錄。</summary>
@@ -118,7 +137,7 @@
     <link href="https://tszhong.top/posts/d4b2.html"/>
     <id>https://tszhong.top/posts/d4b2.html</id>
     <published>2021-02-24T13:49:07.000Z</published>
-    <updated>2021-03-03T15:45:24.000Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">REMOVE 000WEBHOST BRANDING 100%</summary>
@@ -139,7 +158,7 @@
     <link href="https://tszhong.top/posts/68c5.html"/>
     <id>https://tszhong.top/posts/68c5.html</id>
     <published>2021-02-18T14:20:38.000Z</published>
-    <updated>2021-02-25T14:38:36.000Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">PHP 真有趣</summary>
@@ -160,7 +179,7 @@
     <link href="https://tszhong.top/posts/6ba6.html"/>
     <id>https://tszhong.top/posts/6ba6.html</id>
     <published>2021-02-17T09:18:27.000Z</published>
-    <updated>2021-05-12T01:46:47.946Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">Valine 真的不安全</summary>
@@ -181,7 +200,7 @@
     <link href="https://tszhong.top/posts/1213.html"/>
     <id>https://tszhong.top/posts/1213.html</id>
     <published>2021-02-10T20:05:27.000Z</published>
-    <updated>2021-05-10T14:16:42.955Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">是自動生成的耶</summary>
@@ -200,7 +219,7 @@
     <link href="https://tszhong.top/posts/2d15.html"/>
     <id>https://tszhong.top/posts/2d15.html</id>
     <published>2021-02-10T19:29:18.000Z</published>
-    <updated>2021-04-19T07:26:19.811Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">github.io to vercel.app</summary>
@@ -217,7 +236,7 @@
     <link href="https://tszhong.top/posts/9b83.html"/>
     <id>https://tszhong.top/posts/9b83.html</id>
     <published>2021-02-05T03:27:13.000Z</published>
-    <updated>2021-02-16T04:50:02.000Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">使用 Geek uninstaller 清除流氓軟件</summary>
@@ -238,7 +257,7 @@
     <link href="https://tszhong.top/posts/95d6.html"/>
     <id>https://tszhong.top/posts/95d6.html</id>
     <published>2021-02-04T01:38:13.000Z</published>
-    <updated>2021-04-19T07:26:24.316Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">免費博客 New post 推送器</summary>
@@ -259,7 +278,7 @@
     <link href="https://tszhong.top/posts/eef2.html"/>
     <id>https://tszhong.top/posts/eef2.html</id>
     <published>2021-02-02T13:30:35.000Z</published>
-    <updated>2021-05-11T12:16:13.207Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">來看看有趣的 Google 404 畫面吧！</summary>
@@ -278,7 +297,7 @@
     <link href="https://tszhong.top/posts/afb6.html"/>
     <id>https://tszhong.top/posts/afb6.html</id>
     <published>2021-02-01T08:20:41.000Z</published>
-    <updated>2021-02-16T04:52:10.000Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">進階版黑暗模式教學！</summary>
@@ -299,7 +318,7 @@
     <link href="https://tszhong.top/posts/2996.html"/>
     <id>https://tszhong.top/posts/2996.html</id>
     <published>2021-01-29T01:23:33.000Z</published>
-    <updated>2021-02-16T04:51:46.000Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">右鍵菜單中的 使用 Skype 分享 沒有用？刪除它吧！</summary>
@@ -320,7 +339,7 @@
     <link href="https://tszhong.top/posts/7bc0.html"/>
     <id>https://tszhong.top/posts/7bc0.html</id>
     <published>2021-01-29T00:21:47.000Z</published>
-    <updated>2021-05-10T14:15:59.928Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">刪除檔案時有權限問題？用 Take owenership 吧!</summary>
@@ -341,7 +360,7 @@
     <link href="https://tszhong.top/posts/915a.html"/>
     <id>https://tszhong.top/posts/915a.html</id>
     <published>2021-01-24T19:49:37.000Z</published>
-    <updated>2021-02-17T03:56:26.000Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">想不到漸變色的組合？來這個網站吧！</summary>
@@ -360,7 +379,7 @@
     <link href="https://tszhong.top/posts/1644.html"/>
     <id>https://tszhong.top/posts/1644.html</id>
     <published>2021-01-24T09:55:46.000Z</published>
-    <updated>2021-02-08T09:45:56.000Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">Firefox 中 Backspace 返回上一頁很困擾，來這裏看就對了！</summary>
@@ -379,7 +398,7 @@
     <link href="https://tszhong.top/posts/2362.html"/>
     <id>https://tszhong.top/posts/2362.html</id>
     <published>2021-01-23T19:49:37.000Z</published>
-    <updated>2021-02-09T03:39:40.000Z</updated>
+    <updated>2021-06-04T06:18:34.086Z</updated>
     
     
     <summary type="html">在 Console 輸出自定義文字！</summary>
@@ -390,25 +409,6 @@
     
     
     <category term="秘訣" scheme="https://tszhong.top/tags/%E7%A7%98%E8%A8%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>把 Google Map 內嵌到網站</title>
-    <link href="https://tszhong.top/posts/a72e.html"/>
-    <id>https://tszhong.top/posts/a72e.html</id>
-    <published>2021-01-21T11:55:34.000Z</published>
-    <updated>2021-02-17T03:56:20.000Z</updated>
-    
-    
-    <summary type="html">內嵌 Google map</summary>
-    
-    
-    
-    <category term="教學" scheme="https://tszhong.top/categories/%E6%95%99%E5%AD%B8/"/>
-    
-    
-    <category term="內嵌" scheme="https://tszhong.top/tags/%E5%85%A7%E5%B5%8C/"/>
     
   </entry>
   
