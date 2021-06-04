@@ -4056,9 +4056,13 @@ fetch('https://wttr.in/' + returnCitySN["cip"] + '?format="%l+\\+%c+\\+%t+\\+%h"
 `;
     var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
     var card_clock_loading_dom = document.getElementById('card-clock-loading');
-    card_clock_loading_dom.innerHTML = '';
-    clock_box.innerHTML = clock_box_html;
-
+    if (document.getElementById('card-clock-loading')) {
+      card_clock_loading_dom.innerHTML = ''
+    }
+    if (document.getElementById('hexo_electric_clock')) {
+      clock_box.innerHTML = clock_box_html
+    }
+  
     function updateTime() {
       var cd = new Date();
       var card_clock_time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
