@@ -319,7 +319,6 @@ if (window.matchMedia("(max-width: 817px)").matches) {
 /**
  * Calendar - displays a calendar of the current month. Dates appear links if there are posts for that day.
  */
-
  (function ($) {
 
   var aCalendar = function (language, options, object) {
