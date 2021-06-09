@@ -716,3 +716,116 @@ var calLanguages = {
     dayOfWeek: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
   },
 };
+
+// Cookie Popup
+function Pop() {
+  var cssRule = ".palette2{background-color:#ffffff;color:#ff4040}html.darkmode .palette2{background-color:var(--main-color-main-dark); color: var(--main-white)}.palette2 .spopupbtnok{color:#fff !important;background-color:#1e90ff !important}.palette2.wire .spopupbtnok{border:1px solid !important;border-color:#ff4040 !important ;background-color:transparent !important;color:#ff4040 !important } html.darkmode .palette2.wire .spopupbtnok {border-color: #fff !important; color: #fff !important;} .window{position:fixed !important;-webkit-box-sizing:border-box !important;box-sizing:border-box;font-family:Helvetica,Calibri,Arial,sans-serif !important;font-size:16px !important;line-height:1.5em !important;display:-webkit-box !important;display:-ms-flexbox !important;display:flex !important;-ms-flex-wrap:nowrap !important;flex-wrap:nowrap !important;z-index:9999 !important;opacity:1 !important;-webkit-transition:opacity 1s ease !important;transition:opacity 1s ease !important}.floating{padding:2em !important;width:24em !important;-webkit-box-orient:vertical !important;-webkit-box-direction:normal !important;-ms-flex-direction:column !important;flex-direction:column !important;align-items:flex-start !important}.window.banner{padding:1em 1.8em !important;width:100% !important;border-radius:5px !important;-webkit-box-orient:horizontal !important;-webkit-box-direction:normal !important;-ms-flex-direction:row !important;flex-direction:row !important}.policylink{opacity:.8 !important;display:inline-block !important;padding:.2em !important;text-decoration:underline !important}.policylink:hover{opacity:1 !important;text-decoration:none !important;transition:1.5s !important}.credit a{font-size:10px !important;color:#9c9c9c !important;transition:.3s ease-in-out !important;border-radius:5px !important}.credit a:hover{text-decoration:none !important}.credit svg{font-size:16px !important;color:#9c9c9c !important}.banner .credit{position:absolute !important}.banner .credit a{display:flex !important;align-items:center !important;background-color:#5a5a5a !important;color:#9c9c9c !important;padding:5px !important}.banner .credit a:hover{background-color:#fff !important;color:#000 !important;padding:5px 10px !important}.credit a span{opacity:0 !important;width:0 !important;height:0 !important;line-height:0 !important}.credit a:hover span{opacity:1 !important;width:auto !important;height:auto !important;line-height:1em !important;margin-left:5px !important}.banner .credit a:hover svg{color:#1c86fa !important}.banner.top .credit{top:100% !important;margin-top:5px !important}.banner.bottom .credit{bottom:100% !important;margin-bottom:5px !important}.banner.edgeless .credit{margin-left:10px !important}.floating .credit{margin-top:10px !important}.floating .credit a{display:inline-block !important;padding:3px 0 !important}.floating .credit a svg{margin-right:5px !important}.floating .credit a:hover{background-color:#fff !important;color:#000 !important;padding:3px 8px !important}.floating .credit a:hover svg{color:#1c86fa !important}.floating.block .credit{margin-top:10px !important}.floating.edgeless .credit{padding:.5em 2em !important;margin-top:0 !important}.floating.classic .credit{margin-top:10px !important}.floating.wire .credit{margin-top:10px !important}.spopupbtnok{opacity:.9 !important;display:block !important;padding:.4em .8em !important;font-size:.9em !important;text-decoration:none !important;font-weight:700 !important;border-width:2px !important;text-align:center !important;white-space:nowrap !important}@media screen and (max-width:550px){.window.floating.left{display:flex;right:0 !important;left:0 !important;bottom:0;width:100% !important}}.window.floating.left{bottom:0 !important;left:3em;border-top-left-radius:.5em !important;border-top-right-radius:.5em !important}@media screen and (max-width:550px){.window.floating.right{display:flex;right:0 !important;left:0 !important;bottom:0;width:100% !important}}.window.floating.right{bottom:0 !important;right:3em;border-top-left-radius:.5em !important;border-top-right-radius:.5em !important}.floating>.policylink{margin-bottom:1em !important}.floating .message{display:block !important;margin-bottom:1em !important}.window.floating .compliance{-webkit-box-flex:1 !important;-ms-flex:1 0 auto !important;flex:1 0 auto !important;width:100%}.window.banner{-webkit-box-align:center !important;-ms-flex-align:center !important;align-items:center !important}.banner.top{left:0 !important;right:0 !important;top:0 !important}.banner.bottom{left:0 !important;right:0 !important;bottom:0 !important}.banner .message{display:block !important;-webkit-box-flex:1 !important;-ms-flex:1 1 auto !important;flex:1 1 auto !important;max-width:100% !important;margin-right:1em !important}.compliance{display:-webkit-box !important;display:-ms-flexbox !important;display:flex !important;-webkit-box-align:center !important;-ms-flex-align:center !important;align-items:center !important;-ms-flex-line-pack:justify !important;align-content:space-between !important}.floating .compliance>.spopupbtnok{-webkit-box-flex:1 !important;-ms-flex:1 !important;flex:1 !important}.spopupbtnok+.spopupbtnok{margin-left:.5em !important}.floating{margin-bottom:10px}.floating.classic{padding:1.2em !important;border-radius:5px !important}.floating.classic .compliance{text-align:center !important;display:inline !important;-webkit-box-flex:0 !important;-ms-flex:none !important;flex:none !important}.classic .spopupbtnok{border-radius:5px !important}.classic .spopupbtnok:last-child{min-width:140px !important}.floating.classic .spopupbtnok{display:inline-block !important}.edgeless.window{padding:0 !important}.floating.edgeless .message{margin:2em !important;margin-bottom:1.5em !important}.banner.edgeless .spopupbtnok{margin:0 !important;padding:.8em 1.8em !important;height:100% !important}.banner.edgeless .message{margin-left:1em !important}.floating.edgeless .spopupbtnok+.spopupbtnok{margin-left:0 !important}.spopupbtnok:hover{opacity:1 !important;cursor:pointer !important}";
+  let lnk = document.createElement("style");
+  lnk.innerHTML = cssRule
+  document.getElementsByTagName("head")[0].appendChild(lnk);
+  let styl = "undefined";
+  var conDivObj;
+  var fadeInTime = 10;
+  var fadeOutTime = 10;
+  let cookie = {
+      name: "cookieconsent_status",
+      path: "/",
+      expiryDays: 365 * 24 * 60 * 60 * 5000,
+  };
+  var content = {
+      message: "This website uses cookies to ensure you get the best experience on our website.",
+      btnText: "Got it!",
+      mode: "  banner bottom",
+      theme: " theme-classic",
+      palette: " palette1",
+      link: "Learn more",
+      href: "https://tszhong.top/privacy-policy",
+      target: "_self",
+  };
+  let createPopUp = function () {
+      console.log(content);
+      if (typeof conDivObj === "undefined") {
+          conDivObj = document.createElement("DIV");
+          conDivObj.style.opacity = 0;
+          conDivObj.setAttribute("id", "spopupCont");
+      }
+      conDivObj.innerHTML = '<div id="poper" class="window ' +
+          content.mode +
+          content.theme +
+          content.palette +
+          '"><span id="msg" class="message">' +
+          content.message +
+          '<a id="plcy-lnk" class="policylink" href="' +
+          content.href +
+          '"' +
+          " target=" +
+          content.target +
+          ">" +
+          content.link +
+          '</a></span><div id="btn" class="compliance"><a href="#" id="cookie-btn" class="spopupbtnok" >' +
+          content.btnText;
+      document.body.appendChild(conDivObj);
+      fadeIn(conDivObj);
+      document.getElementById("cookie-btn").addEventListener("click", function () {
+          saveCookie();
+          fadeOut(conDivObj);
+      });
+  };
+  let fadeOut = function (element) {
+      var op = 1;
+      var timer = setInterval(function () {
+          if (op <= 0.1) {
+              clearInterval(timer);
+              conDivObj.parentElement.removeChild(conDivObj);
+          }
+          element.style.opacity = op;
+          element.style.filter = "alpha(opacity=" + op * 100 + ")";
+          op -= op * 0.1;
+      }, fadeOutTime);
+  };
+  let fadeIn = function (element) {
+      var op = 0.1;
+      var timer = setInterval(function () {
+          if (op >= 1) {
+              clearInterval(timer);
+          }
+          element.style.opacity = op;
+          element.style.filter = "alpha(opacity=" + op * 100 + ")";
+          op += op * 0.1;
+      }, fadeInTime);
+  };
+  let checkCookie = function (key) {
+      var keyValue = document.cookie.match("(^|;) ?" + key + "=([^;]*)(;|$)");
+      return keyValue ? true : false;
+  };
+  let saveCookie = function () {
+      var expires = new Date();
+      expires.setTime(expires.getTime() + cookie.expiryDays);
+      document.cookie = cookie.name +
+          "=" +
+          "ok" +
+          ";expires=" +
+          expires.toUTCString() +
+          "path=" +
+          cookie.path;
+  };
+  this.init = function (param) {
+      if (checkCookie(cookie.name)) return;
+      if (typeof param === "object") {
+          if ("ButtonText" in param) content.btnText = param.ButtonText;
+          if ("Mode" in param) content.mode = " " + param.Mode;
+          if ("Theme" in param) content.theme = " " + param.Theme;
+          if ("Palette" in param) content.palette = " " + param.Palette;
+          if ("Message" in param) content.message = param.Message;
+          if ("LinkText" in param) content.link = param.LinkText;
+          if ("Location" in param) content.href = param.Location;
+          if ("Target" in param) content.target = param.Target;
+          if ("Time" in param)
+              setTimeout(function () {
+                  createPopUp();
+              }, param.Time * 1000);
+          else createPopUp();
+      }
+  };
+}
+window.start = new Pop();
