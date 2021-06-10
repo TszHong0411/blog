@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tszhong.top/log/</loc>
+    
+    <lastmod>2021-06-10</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tszhong.top/privacy-policy/</loc>
     
     <lastmod>2021-06-10</lastmod>
@@ -10,13 +17,6 @@
   
   <url>
     <loc>https://tszhong.top/cookie-policy/</loc>
-    
-    <lastmod>2021-06-10</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tszhong.top/log/</loc>
     
     <lastmod>2021-06-10</lastmod>
     
@@ -198,7 +198,7 @@
   </url>
   
   <url>
-    <loc>https://tszhong.top/posts/915a.html</loc>
+    <loc>https://tszhong.top/posts/72c4.html</loc>
     
     <lastmod>2021-06-04</lastmod>
     
@@ -206,6 +206,13 @@
   
   <url>
     <loc>https://tszhong.top/posts/9b83.html</loc>
+    
+    <lastmod>2021-06-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tszhong.top/posts/915a.html</loc>
     
     <lastmod>2021-06-04</lastmod>
     
@@ -227,13 +234,6 @@
   
   <url>
     <loc>https://tszhong.top/posts/7dd.html</loc>
-    
-    <lastmod>2021-06-04</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tszhong.top/posts/72c4.html</loc>
     
     <lastmod>2021-06-04</lastmod>
     
@@ -282,13 +282,6 @@
   </url>
   
   <url>
-    <loc>https://tszhong.top/posts/976d.html</loc>
-    
-    <lastmod>2021-06-04</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://tszhong.top/posts/646f.html</loc>
     
     <lastmod>2021-06-04</lastmod>
@@ -297,6 +290,13 @@
   
   <url>
     <loc>https://tszhong.top/posts/edd0.html</loc>
+    
+    <lastmod>2021-06-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tszhong.top/posts/976d.html</loc>
     
     <lastmod>2021-06-04</lastmod>
     
@@ -338,14 +338,14 @@
   </url>
   
   <url>
-    <loc>https://tszhong.top/posts/c7e3.html</loc>
+    <loc>https://tszhong.top/posts/c287.html</loc>
     
     <lastmod>2021-06-04</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tszhong.top/posts/c287.html</loc>
+    <loc>https://tszhong.top/posts/c7e3.html</loc>
     
     <lastmod>2021-06-04</lastmod>
     
@@ -599,14 +599,14 @@
   </url>
   
   <url>
-    <loc>https://tszhong.top/tags/%E9%80%B2%E5%BA%A6%E6%A2%9D/</loc>
+    <loc>https://tszhong.top/tags/Python/</loc>
     <lastmod>2021-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tszhong.top/tags/Python/</loc>
+    <loc>https://tszhong.top/tags/%E9%80%B2%E5%BA%A6%E6%A2%9D/</loc>
     <lastmod>2021-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
