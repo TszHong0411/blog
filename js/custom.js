@@ -736,13 +736,13 @@ function Pop() {
       expiryDays: 365 * 24 * 60 * 60 * 5000,
   };
   var content = {
-      message: "This website uses cookies to ensure you get the best experience on our website.",
-      btnText: "Got it!",
+      message: "本網站使用 cookie 來確保您在我們的網站上獲得最佳體驗。",
+      btnText: "好的！",
       mode: "  banner bottom",
       theme: " theme-classic",
       palette: " palette1",
-      link: "Learn more",
-      href: "https://tszhong.top/privacy-policy",
+      link: "了解更多",
+      href: "https://tszhong.top/cookie-policy",
       target: "_self",
   };
   let createPopUp = function () {
