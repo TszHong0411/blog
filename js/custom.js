@@ -2,20 +2,39 @@
 /*
 
 從 tszhong0411.github.io -> tszhong0411.vercel.app -> tszhong.top
-2020 / 12 / 05 - 2021 / 05 / 10 的瀏覽次數是 16629 
-2021 / 05 / 10 是換上 tszhong.top 的大日子
-數據來源 (Google Analytics)
+
+數據來源 (舊網站套用不蒜子)
+
+截圖:
+
+Vercel:
+
+https://cdn.jsdelivr.net/gh/tszhong0411/image/record-vercel-app.png
+
+Github io:
+
+https://cdn.jsdelivr.net/gh/tszhong0411/image/record-github-io.png
+
+Last Update: 2021 / 06 / 10 20:38
 
 */
 $(document).ready(function() {
     var int = setInterval(fixCount, 50);
-    var countOffset = 16629;  // 初始化首次數據   
+    var int1 = setInterval(fixCount1, 50);
+    var pvCountOffset = 27643;  // 初始化首次數據 
+    var uvCountOffset = 2442;
     function fixCount() {
       if ($("#busuanzi_value_site_pv").html()) {
-        $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); // 加上初始數據 
+        $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvCountOffset); // 加上初始數據 
       clearInterval(int);
       }
-    }           
+    }  
+    function fixCount1() {
+      if ($("#busuanzi_value_site_uv").html()) {
+        $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvCountOffset);
+        clearInterval(int1);
+      }
+    }        
   }
 );
 
