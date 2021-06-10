@@ -1,3 +1,24 @@
+// 不蒜子計數初始值糾正
+/*
+
+從 tszhong0411.github.io -> tszhong0411.vercel.app -> tszhong.top
+2020 / 12 / 05 - 2021 / 05 / 10 的瀏覽次數是 16629 
+2021 / 05 / 10 是換上 tszhong.top 的大日子
+數據來源 (Google Analytics)
+
+*/
+$(document).ready(function() {
+    var int = setInterval(fixCount, 50);
+    var countOffset = 16629;  // 初始化首次數據   
+    function fixCount() {
+      if ($("#busuanzi_value_site_pv").html()) {
+        $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); // 加上初始數據 
+      clearInterval(int);
+      }
+    }           
+  }
+);
+
 // Clock JS
 fetch('https://wttr.in/' + returnCitySN["cip"] + '?format="%l+\\+%c+\\+%t+\\+%h"').then(res => res.text()).then(
   data => {
