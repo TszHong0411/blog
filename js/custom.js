@@ -18,6 +18,18 @@ https://cdn.jsdelivr.net/gh/tszhong0411/image/record-github-io.png
 Last Update: 2021 / 06 / 10 20:38
 
 */
+// 推送公告
+if (localStorage.getItem('tipRead') == undefined || localStorage.getItem('tipRead') == false) {
+  $('body').append("<div class=\"note info flat\" id=\"tipBox\" style=\"display:none;\"><p>最新公告: 本站已開放 登入 和 註冊</p><i class=\"fas fa-times-circle\" id=\"tipBoxClose\"></i></div>")
+  $(document).ready(function() {
+    $('#tipBox').fadeIn(2500)
+  })
+  $('#tipBoxClose').on('click', (e) => {
+    $('#tipBox').hide()
+    localStorage.setItem("tipRead", "true")
+  })
+}
+
 $(document).ready(function() {
     var int = setInterval(fixCount, 50);
     var int1 = setInterval(fixCount1, 50);
@@ -35,8 +47,31 @@ $(document).ready(function() {
         clearInterval(int1);
       }
     }        
-  }
+  } 
 );
+
+// 如果用戶已登入就刪除 登入/註冊 字樣
+auth.onAuthStateChanged(user => {
+  if (!user) {
+      $('#userBoxA').show()
+      $('#logoutHome').hide()
+      $('#userAvatar').hide()
+  } else {
+    $('#userBoxA').hide()
+    // Avatar
+    if (auth.currentUser.photoURL != null) {
+      $('#userAvatar').attr("src", auth.currentUser.photoURL)
+    } else {
+      $('#userAvatar').attr("src", "https://cdn.jsdelivr.net/gh/tszhong0411/image/auth/none.png")
+    }
+  }
+})
+
+// Logout Function
+$('#logoutHome').on('click', (e) => {
+  auth.signOut()
+  btf.snackbarShow("已登出")
+})
 
 // Clock JS
 fetch('https://wttr.in/' + returnCitySN["cip"] + '?format="%l+\\+%c+\\+%t+\\+%h"').then(res => res.text()).then(
