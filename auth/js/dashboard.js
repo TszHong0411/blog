@@ -26,7 +26,8 @@ $('#update-form').on('submit', (e) => {
 
 
     db.doc(`users/${auth.currentUser.email}`).set({
-        url: userPersonalUrlInput.val()
+        url: userPersonalUrlInput.val(),
+        email: auth.currentUser.email
     })
 
 
