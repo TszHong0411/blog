@@ -11,12 +11,11 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+
 // make auth and firestore references
 const auth = firebase.auth();
 const db = firebase.firestore();
 const user = firebase.auth().currentUser;
-// update firestore settings
-db.settings({ timestampsInSnapshots: true });
 
 // Main
 $(function() {

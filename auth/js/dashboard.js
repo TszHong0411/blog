@@ -1,3 +1,13 @@
+// var
+var userPersonalUrlInput = $('#userUrl')
+var uploadBtn = $('#uploadBtn')
+var uploadBox = $('#uploadBox')
+var avatarUpload = $('#avatarUpload')
+var avatarPreview = $('#avatarPreview')
+var avatarPreviewCancel = $('#avatarPreviewCancel')
+var avatarAccept = $('#avatarAccept')
+var uploadedBtn = $('#uploadedBtn')
+
 // Listen for auth status
 auth.onAuthStateChanged(user => {
     // console.log(user)
@@ -16,22 +26,18 @@ auth.onAuthStateChanged(user => {
     }
 })
 
-// var
-var userPersonalUrlInput = $('#userUrl')
-
-
 // Update info
 $('#update-form').on('submit', (e) => {
     e.preventDefault();
 
-
+    // Save user personal url
     db.doc(`users/${auth.currentUser.email}`).set({
         url: userPersonalUrlInput.val(),
         email: auth.currentUser.email
     })
 
 
-
+    // Update profile
     auth.currentUser.updateProfile({
         displayName: $('#screenName-0-1').val(),
         photoURL: $('#photoLink').val()
@@ -45,12 +51,14 @@ $('#update-form').on('submit', (e) => {
             location.reload()
         }, 1000);
     })
-    
-    
 
-    
+
+
+
 
 })
+
+// 如果用戶有個人網址就 innerHTML
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         db.collection("users").doc(user.email).get().then((doc) => {
@@ -60,3 +68,83 @@ firebase.auth().onAuthStateChanged((user) => {
         });
     }
 });
+
+// Upload avatar function
+uploadBtn.on('click', (e) => {
+    uploadBox.toggle()
+})
+
+avatarUpload.on('change', (e) => {
+
+    e.preventDefault();
+
+    if (avatarUpload.val() == "") {
+        avatarPreview.attr("style", "")
+    }
+
+    if (avatarUpload.val() !== "") {
+        var file = avatarUpload.get(0).files[0],
+            reader = new FileReader();
+
+        reader.onload = function (event) {
+            avatarPreview.css('background-image', 'url(' + event.target.result + ')');
+        }
+        reader.readAsDataURL(file);
+
+    }
+
+
+
+})
+
+// Cancel
+avatarPreviewCancel.on('click', (e) => {
+    uploadBox.hide()
+    avatarUpload.val("")
+    avatarPreview.attr("style", "")
+    if ($('.msg-success')) {
+        $('.msg-success').remove()
+    }
+    if ($('.msg-error')) {
+        $('.msg-error').remove()
+    }
+})
+
+
+// Upload
+avatarAccept.on('click', (e) => {
+
+
+    if (avatarUpload.val() !== "") {
+        if (avatarUpload.get(0).files[0].size <= 1024 * 1024) {
+            var file = avatarUpload.get(0).files[0]
+            var storageRef = firebase.storage().ref('avatar/' + file.name + '-' + Math.floor(Math.random() * 90000000) + 10000000)
+            storageRef.put(file).then(function () {
+                storageRef.getDownloadURL().then(function (url) {
+                    $('#photoLink').val(url)
+                })
+                if ($('.msg-success')) {
+                    $('.msg-success').remove()
+                }
+                $('#msg_of_avatar').html('<div class="msg-success"><p>連結已自動貼上，請按 更新我的檔案。</p></div>')
+                $('#notUploaded').hide()
+                $('#uploaded').show()
+            })
+        } else {
+            if ($('.msg-error')) {
+                $('.msg-error').remove()
+            }
+            $('#msg_of_avatar').html('<div class="msg-error"><p>檔案不能大於 1 MB。</p></div>')
+        }
+    } else {
+        if ($('.msg-error')) {
+            $('.msg-error').remove()
+        }
+        $('#msg_of_avatar').html('<div class="msg-error"><p>請選擇檔案。</p></div>')
+    }
+})
+
+// 關閉按鈕
+uploadedBtn.on('click', (e) => {
+    uploadBox.hide()
+})

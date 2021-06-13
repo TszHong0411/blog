@@ -1,4 +1,4 @@
-var msg_change_email = '<div class="msg-success"><p>Successfully change email.</p><p><a href="/auth/">Go Dashboard</a><br><a href="/">Go Blog</a></p></div>'
+var msg_change_email = '<div class="msg-success"><p>Successfully change email.</p><p><a href="/dashboard/">Go Dashboard</a><br><a href="/">Go Blog</a></p></div>'
 
 $('#change-email-form').on('submit', (e) => {
     e.preventDefault();

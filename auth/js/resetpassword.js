@@ -1,4 +1,4 @@
-var msg_reset_password = '<div class="msg-success"><p>Successfully reset password.</p><p><a href="/auth/">Go Dashboard</a><br><a href="/">Go Blog</a></p></div>'
+var msg_reset_password = '<div class="msg-success"><p>Successfully reset password.</p><p><a href="/dashboard/">Go Dashboard</a><br><a href="/">Go Blog</a></p></div>'
 
 $('#reset-password-form').on('submit', (e) => {
 
