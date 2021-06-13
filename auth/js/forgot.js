@@ -1,4 +1,4 @@
-var msg_sended_email = '<div class="msg-success"><p>Successfully. Check your inbox for further instructions</p><p><a href="/auth/">Go Dashboard</a><a href="/">Go Blog</a></p></div>'
+var msg_sended_email = '<div class="msg-success"><p>Successfully. Check your inbox for further instructions</p><p><a href="/auth/">Go Login</a><br><a href="/">Go Blog</a></p></div>'
 
 $('#forgot-form').on('submit', (e) => {
     e.preventDefault();
