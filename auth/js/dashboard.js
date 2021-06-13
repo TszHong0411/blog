@@ -118,7 +118,7 @@ avatarAccept.on('click', (e) => {
     if (avatarUpload.val() !== "") {
         if (avatarUpload.get(0).files[0].size <= 1024 * 1024) {
             var file = avatarUpload.get(0).files[0]
-            var storageRef = firebase.storage().ref('avatar/' + file.name + '-' + Math.floor(Math.random() * 90000000) + 10000000)
+            var storageRef = firebase.storage().ref('avatar/' + file.name + '-' + Math.floor(Math.random() * 90000000))
             storageRef.put(file).then(function () {
                 storageRef.getDownloadURL().then(function (url) {
                     $('#photoLink').val(url)
