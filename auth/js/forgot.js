@@ -1,1 +1,33 @@
-"use strict";var msg_sended_email='<div class="msg-success"><p>Successfully. Check your inbox for further instructions</p><p><a href="/auth/">Go Dashboard</a><a href="/">Go Blog</a></p></div>';$("#forgot-form").on("submit",function(s){s.preventDefault(),auth.onAuthStateChanged(function(s){var e=$("#user_email").val();auth.sendPasswordResetEmail(e).then(function(){msg.css("display","block"),$(".msg-error")&&$(".msg-error").remove(),$(".msg-success")&&$(".msg-success").remove(),msg.append(msg_sended_email)}).catch(function(s){msg.css("display","block"),$(".msg-error")&&$(".msg-error").remove(),$(".msg-success")&&$(".msg-success").remove(),msg.append('<div class="msg-error"><p>'+s.message+"</p></p></div>")})})});
+var msg_sended_email = '<div class="msg-success"><p>Successfully. Check your inbox for further instructions</p><p><a href="/auth/">Go Dashboard</a><a href="/">Go Blog</a></p></div>'
+
+$('#forgot-form').on('submit', (e) => {
+    e.preventDefault();
+    auth.onAuthStateChanged(user => {
+        var email = $('#user_email').val()
+
+
+        auth.sendPasswordResetEmail(email).then(function () {
+            msg.css("display", "block")
+            if ($('.msg-error')) {
+                $('.msg-error').remove()
+            }
+            if ($('.msg-success')) {
+                $('.msg-success').remove()
+            }
+            msg.append(msg_sended_email);
+        }).catch(function (error) {
+            msg.css("display", "block")
+            if ($('.msg-error')) {
+                $('.msg-error').remove()
+            }
+			if ($('.msg-success')) {
+                $('.msg-success').remove()
+            }
+            msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
+        });
+
+        
+    })
+
+
+})

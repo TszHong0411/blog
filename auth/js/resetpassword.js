@@ -1,1 +1,46 @@
-"use strict";var msg_reset_password='<div class="msg-success"><p>Successfully reset password.</p><p><a href="/auth/">Go Dashboard</a><a href="/">Go Blog</a></p></div>';$("#reset-password-form").on("submit",function(s){s.preventDefault(),auth.onAuthStateChanged(function(s){var e=s.email,r=$("#current-password").val(),a=$("#new-password").val(),r=firebase.auth.EmailAuthProvider.credential(e,r);s.reauthenticateWithCredential(r).then(function(){s.updatePassword(a).then(function(){msg.css("display","block"),$(".msg-error")&&$(".msg-error").remove(),$(".msg-success")&&$(".msg-success").remove(),msg.append(msg_reset_password)}).catch(function(s){msg.css("display","block"),$(".msg-error")&&$(".msg-error").remove(),$(".msg-success")&&$(".msg-success").remove(),msg.append('<div class="msg-error"><p>'+s.message+"</p></p></div>")})}).catch(function(s){msg.css("display","block"),$(".msg-error")&&$(".msg-error").remove(),$(".msg-success")&&$(".msg-success").remove(),msg.append('<div class="msg-error"><p>'+s.message+"</p></p></div>")})})});
+var msg_reset_password = '<div class="msg-success"><p>Successfully reset password.</p><p><a href="/auth/">Go Dashboard</a><a href="/">Go Blog</a></p></div>'
+
+$('#reset-password-form').on('submit', (e) => {
+
+    e.preventDefault();
+
+    auth.onAuthStateChanged(user => {
+        var email = user.email
+        var password = $('#current-password').val()
+        var newPassword = $('#new-password').val()
+        var credential = firebase.auth.EmailAuthProvider.credential(email, password)
+
+        user.reauthenticateWithCredential(credential).then(function () {
+            user.updatePassword(newPassword).then(function () {
+                msg.css("display", "block")
+                if ($('.msg-error')) {
+                    $('.msg-error').remove()
+                }
+                if ($('.msg-success')) {
+                    $('.msg-success').remove()
+                }
+                msg.append(msg_reset_password);
+            }).catch(error => {
+                msg.css("display", "block")
+                if ($('.msg-error')) {
+                    $('.msg-error').remove()
+                }
+                if ($('.msg-success')) {
+                    $('.msg-success').remove()
+                }
+                msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
+            });
+        }).catch(error => {
+            msg.css("display", "block")
+            if ($('.msg-error')) {
+                $('.msg-error').remove()
+            }
+			if ($('.msg-success')) {
+                $('.msg-success').remove()
+            }
+            msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
+        })
+    })
+
+
+})
