@@ -107,7 +107,7 @@ if (document.querySelector('#signup-form')) {
                 $('.msg-success').remove()
             }
 			msg.append(msg_success_t);
-			db.doc(`users/${email}`).set({
+			db.doc('users/' + auth.currentUser.uid).set({
 				email: email
 			})
 		}).catch(error => {

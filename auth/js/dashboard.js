@@ -31,7 +31,7 @@ $('#update-form').on('submit', (e) => {
     e.preventDefault();
 
     // Save user personal url
-    db.doc(`users/${auth.currentUser.email}`).set({
+    db.doc('users/' + auth.currentUser.uid).set({
         url: userPersonalUrlInput.val(),
         email: auth.currentUser.email
     })
@@ -61,7 +61,7 @@ $('#update-form').on('submit', (e) => {
 // 如果用戶有個人網址就 innerHTML
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        db.collection("users").doc(user.email).get().then((doc) => {
+        db.collection("users").doc(user.uid).get().then((doc) => {
             if (doc.data().url != undefined) {
                 $('#userUrl').val(doc.data().url)
             }
