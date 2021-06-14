@@ -1,4 +1,4 @@
-var msg_reset_password = '<div class="msg-success"><p>Successfully reset password.</p><p><a href="/dashboard/">Go Dashboard</a><br><a href="/">Go Blog</a></p></div>'
+var msg_reset_password = '<div class="msg-success"><p>成功重置密碼。</p><p><a href="/dashboard/">Dashboard</a><br><a href="/">Blog</a></p></div>'
 
 $('#reset-password-form').on('submit', (e) => {
 
@@ -38,7 +38,11 @@ $('#reset-password-form').on('submit', (e) => {
 			if ($('.msg-success')) {
                 $('.msg-success').remove()
             }
-            msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
+            if (error.code == "auth/wrong-password") {
+				msg.append('<div class="msg-error"><p>' + '密碼不正確。' + '</p></p></div>');
+			} else {
+                msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
+            }
         })
     })
 

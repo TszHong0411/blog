@@ -1,4 +1,4 @@
-var msg_change_email = '<div class="msg-success"><p>Successfully change email.</p><p><a href="/dashboard/">Go Dashboard</a><br><a href="/">Go Blog</a></p></div>'
+var msg_change_email = '<div class="msg-success"><p>成功更改電子郵箱。</p><p><a href="/dashboard/">Go Dashboard</a><br><a href="/">Go Blog</a></p></div>'
 
 $('#change-email-form').on('submit', (e) => {
     e.preventDefault();
@@ -26,7 +26,11 @@ $('#change-email-form').on('submit', (e) => {
                 if ($('.msg-success')) {
                     $('.msg-success').remove()
                 }
-                msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
+                if (error.code == "auth/email-already-exists") {
+                    msg.append('<div class="msg-error"><p>' + '電子郵箱已被使用。' + '</p></p></div>');
+                } else {
+                    msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
+                }
             });
         }).catch(error => {
             msg.css("display", "block")
@@ -36,7 +40,11 @@ $('#change-email-form').on('submit', (e) => {
 			if ($('.msg-success')) {
                 $('.msg-success').remove()
             }
-            msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
+            if (error.code == "auth/wrong-password") {
+				msg.append('<div class="msg-error"><p>' + '密碼不正確。' + '</p></p></div>');
+			} else {
+                msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
+            }
         })
     })
 

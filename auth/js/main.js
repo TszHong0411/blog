@@ -1,12 +1,12 @@
 // Firebase init
 var firebaseConfig = {
-    apiKey: "AIzaSyDMTyHZ59iT6TvVoq034GOypvEbURBY5os",
-    authDomain: "auth-development-57e87.firebaseapp.com",
-    databaseURL: "https://auth-development-57e87.firebaseio.com",
-    projectId: "auth-development-57e87",
-    storageBucket: "auth-development-57e87.appspot.com",
-    messagingSenderId: "61606094643",
-    appId: "1:61606094643:web:a2c78f80f55147248a8046"
+	apiKey: "AIzaSyDMTyHZ59iT6TvVoq034GOypvEbURBY5os",
+	authDomain: "auth-development-57e87.firebaseapp.com",
+	databaseURL: "https://auth-development-57e87.firebaseio.com",
+	projectId: "auth-development-57e87",
+	storageBucket: "auth-development-57e87.appspot.com",
+	messagingSenderId: "61606094643",
+	appId: "1:61606094643:web:a2c78f80f55147248a8046"
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -18,9 +18,9 @@ const db = firebase.firestore();
 const user = firebase.auth().currentUser;
 
 // Main
-$(function() {
+$(function () {
 
-	$("input[type='password'][data-eye]").each(function(i) {
+	$("input[type='password'][data-eye]").each(function (i) {
 		var $this = $(this),
 			id = 'eye-password-' + i,
 			el = $('#' + id);
@@ -36,14 +36,14 @@ $(function() {
 		$this.after($("<div/>", {
 			html: 'Show',
 			class: 'btn btn-primary btn-sm',
-			id: 'passeye-toggle-'+i,
+			id: 'passeye-toggle-' + i,
 		}).css({
-				position: 'absolute',
-				right: 10,
-				top: ($this.outerHeight() / 2) - 12,
-				padding: '2px 7px',
-				fontSize: 12,
-				cursor: 'pointer',
+			position: 'absolute',
+			right: 10,
+			top: ($this.outerHeight() / 2) - 12,
+			padding: '2px 7px',
+			fontSize: 12,
+			cursor: 'pointer',
 		}));
 
 		$this.after($("<input/>", {
@@ -53,47 +53,47 @@ $(function() {
 
 		var invalid_feedback = $this.parent().parent().find('.invalid-feedback');
 
-		if(invalid_feedback.length) {
+		if (invalid_feedback.length) {
 			$this.after(invalid_feedback.clone());
 		}
 
-		$this.on("keyup paste", function() {
-			$("#passeye-"+i).val($(this).val());
+		$this.on("keyup paste", function () {
+			$("#passeye-" + i).val($(this).val());
 		});
-		$("#passeye-toggle-"+i).on("click", function() {
-			if($this.hasClass("show")) {
+		$("#passeye-toggle-" + i).on("click", function () {
+			if ($this.hasClass("show")) {
 				$this.attr('type', 'password');
 				$this.removeClass("show");
 				$(this).removeClass("btn-outline-primary");
-			}else{
+			} else {
 				$this.attr('type', 'text');
-				$this.val($("#passeye-"+i).val());				
+				$this.val($("#passeye-" + i).val());
 				$this.addClass("show");
 				$(this).addClass("btn-outline-primary");
 			}
 		});
 	});
 
-	$(".my-login-validation").submit(function() {
+	$(".my-login-validation").submit(function () {
 		var form = $(this);
-        if (form[0].checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
+		if (form[0].checkValidity() === false) {
+			event.preventDefault();
+			event.stopPropagation();
+		}
 		form.addClass('was-validated');
 	});
 });
 
 // Const
 const msg = $('#msg');
-var msg_success_t = '<div class="msg-success"><p>Successfully created an account</p></div>'
+var msg_success_t = '<div class="msg-success"><p>已成功創建帳戶</p></div>'
 
 // SignUp
 const signupForm = document.querySelector('#signup-form')
 if (document.querySelector('#signup-form')) {
 	signupForm.addEventListener('submit', (e) => {
 		e.preventDefault();
-	
+
 		// Get user info
 		const email = signupForm['signup-email'].value;
 		const password = signupForm['signup-password'].value;
@@ -101,25 +101,33 @@ if (document.querySelector('#signup-form')) {
 		auth.createUserWithEmailAndPassword(email, password).then(cred => {
 			msg.css("display", "block")
 			if ($('.msg-error')) {
-                $('.msg-error').remove()
-            }
+				$('.msg-error').remove()
+			}
 			if ($('.msg-success')) {
-                $('.msg-success').remove()
-            }
+				$('.msg-success').remove()
+			}
 			msg.append(msg_success_t);
 			db.doc('users/' + auth.currentUser.uid).set({
 				email: email
 			})
 		}).catch(error => {
-            msg.css("display", "block")
+			msg.css("display", "block")
 			if ($('.msg-error')) {
-                $('.msg-error').remove()
-            }
+				$('.msg-error').remove()
+			}
 			if ($('.msg-success')) {
-                $('.msg-success').remove()
-            }
-            msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
-        })
+				$('.msg-success').remove()
+			}
+			if (error.code == "auth/invalid-password") {
+				msg.append('<div class="msg-error"><p>' + "密碼需要最少6個字元。" + '</p></p></div>');
+			} else if (error.code == "auth/email-already-exists") {
+				msg.append('<div class="msg-error"><p>' + "該電子郵件地址已被另一個帳戶使用。" + '</p></p></div>');
+			} else if (error.code == "auth/invalid-email") {
+				msg.append('<div class="msg-error"><p>' + "電子郵箱無效。" + '</p></p></div>');
+			} else {
+				msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
+			}
+		})
 	});
 }
 
@@ -147,24 +155,31 @@ const loginForm = document.querySelector('#login-form');
 if (document.querySelector('#login-form')) {
 	loginForm.addEventListener('submit', (e) => {
 		e.preventDefault();
-	
+
 		// Get usre info
 		const email = loginForm['login-email'].value
 		const password = loginForm['login-password'].value
-	
+
 		auth.signInWithEmailAndPassword(email, password).then(cred => {
 			window.location.replace('/')
 		}).catch(error => {
-            msg.css("display", "block")
+			msg.css("display", "block")
 			if ($('.msg-error')) {
-                $('.msg-error').remove()
-            }
+				$('.msg-error').remove()
+			}
 			if ($('.msg-success')) {
-                $('.msg-success').remove()
-            }
-            msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
-        })
-	})
+				$('.msg-success').remove()
+			}
+			if (error.code == "auth/wrong-password") {
+				msg.append('<div class="msg-error"><p>' + '密碼不正確。' + '</p></p></div>');
+			} else if (error.code == "auth/user-not-found") {
+				msg.append('<div class="msg-error"><p>' + '用戶不存在。' + '</p></p></div>');
+			} else {
+				msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
+			}
+
+		})
+	}) // msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
 }
 
 // Copyright Year
@@ -172,18 +187,3 @@ copyrightYear = new Date().getFullYear()
 if ($('#fullYear')) {
 	$('#fullYear').html(copyrightYear)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
