@@ -39,13 +39,13 @@ $('#update-form').on('submit', (e) => {
             email: auth.currentUser.email,
             bio: userBio.val()
         })
-    
-    
+
+
         // Update profile
         auth.currentUser.updateProfile({
             displayName: $('#screenName-0-1').val(),
             photoURL: $('#photoLink').val()
-    
+
         }).then(function () {
             if ($('#msg_dash_t')) {
                 $('#msg_dash_t').remove()
@@ -103,7 +103,7 @@ avatarUpload.on('change', (e) => {
         var file = avatarUpload.get(0).files[0],
             reader = new FileReader();
 
-            // Preview
+        // Preview
         reader.onload = function (event) {
             avatarPreview.css('background-image', 'url(' + event.target.result + ')');
         }
@@ -136,17 +136,23 @@ avatarAccept.on('click', (e) => {
     if (avatarUpload.val() !== "") {
         if (avatarUpload.get(0).files[0].size <= 1024 * 1024) {
             var file = avatarUpload.get(0).files[0]
-            var storageRef = firebase.storage().ref('avatar/' + file.name + '-' + Math.floor(Math.random() * 90000000))
-            storageRef.put(file).then(function () {
-                storageRef.getDownloadURL().then(function (url) {
-                    $('#photoLink').val(url)
-                })
+            const imageExtensionMatch = file.name.match(/\.(\w+)?$/)
+            const imageExtension =
+                imageExtensionMatch && imageExtensionMatch[1] !== 'jpg' ?
+                imageExtensionMatch[1] :
+                'jpeg'
+            var fileName = file.name.replace(/.*\.(\w+)?$/, 'avatar.$1')
+            var storageRefOfAvatar = firebase.storage().ref('user/' + auth.currentUser.uid + '/avatar/' + 'avatar' + '_' + auth.currentUser.uid + '.' + imageExtension)
+            storageRefOfAvatar.put(file).then(function () {
+                
+                $('#photoLink').val(`https://firebasestorage.googleapis.com/v0/b/auth-development-57e87.appspot.com/o/user%2F${auth.currentUser.uid}%2Favatar%2Favatar_${auth.currentUser.uid}.${imageExtension}?alt=media`)
                 if ($('.msg-success')) {
                     $('.msg-success').remove()
                 }
                 $('#msg_of_avatar').html('<div class="msg-success"><p>連結已自動貼上，請按 更新我的檔案。</p></div>')
                 $('#notUploaded').hide()
                 $('#uploaded').show()
+             
             })
         } else {
             if ($('.msg-error')) {

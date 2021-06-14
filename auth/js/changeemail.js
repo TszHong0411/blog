@@ -50,3 +50,4 @@ $('#change-email-form').on('submit', (e) => {
 
 
 })
+
