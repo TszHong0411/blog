@@ -118,9 +118,9 @@ if (document.querySelector('#signup-form')) {
 			if ($('.msg-success')) {
 				$('.msg-success').remove()
 			}
-			if (error.code == "auth/invalid-password") {
+			if (error.code == "auth/weak-password") {
 				msg.append('<div class="msg-error"><p>' + "密碼需要最少6個字元。" + '</p></p></div>');
-			} else if (error.code == "auth/email-already-exists") {
+			} else if (error.code == "auth/email-already-in-use") {
 				msg.append('<div class="msg-error"><p>' + "該電子郵件地址已被另一個帳戶使用。" + '</p></p></div>');
 			} else if (error.code == "auth/invalid-email") {
 				msg.append('<div class="msg-error"><p>' + "電子郵箱無效。" + '</p></p></div>');

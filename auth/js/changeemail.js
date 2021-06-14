@@ -26,7 +26,7 @@ $('#change-email-form').on('submit', (e) => {
                 if ($('.msg-success')) {
                     $('.msg-success').remove()
                 }
-                if (error.code == "auth/email-already-exists") {
+                if (error.code == "auth/email-already-in-use") {
                     msg.append('<div class="msg-error"><p>' + '電子郵箱已被使用。' + '</p></p></div>');
                 } else {
                     msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
