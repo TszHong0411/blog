@@ -7,6 +7,8 @@ var avatarPreview = $('#avatarPreview')
 var avatarPreviewCancel = $('#avatarPreviewCancel')
 var avatarAccept = $('#avatarAccept')
 var uploadedBtn = $('#uploadedBtn')
+var userBio = $('#userBio')
+var userBioLimit = $('#userBioLimit')
 
 // Listen for auth status
 auth.onAuthStateChanged(user => {
@@ -31,39 +33,54 @@ $('#update-form').on('submit', (e) => {
     e.preventDefault();
 
     // Save user personal url
-    db.doc('users/' + auth.currentUser.uid).set({
-        url: userPersonalUrlInput.val(),
-        email: auth.currentUser.email
-    })
-
-
-    // Update profile
-    auth.currentUser.updateProfile({
-        displayName: $('#screenName-0-1').val(),
-        photoURL: $('#photoLink').val()
-
-    }).then(function () {
+    if (userBio.val().length <= 100) {
+        db.doc('users/' + auth.currentUser.uid).set({
+            url: userPersonalUrlInput.val(),
+            email: auth.currentUser.email,
+            bio: userBio.val()
+        })
+    
+    
+        // Update profile
+        auth.currentUser.updateProfile({
+            displayName: $('#screenName-0-1').val(),
+            photoURL: $('#photoLink').val()
+    
+        }).then(function () {
+            if ($('#msg_dash_t')) {
+                $('#msg_dash_t').remove()
+            }
+            if ($('#msg_dash_t_error')) {
+                $('#msg_dash_t_error').remove()
+            }
+            $('#msg_dash').append("<div id=\"msg_dash_t\">更新成功</div>")
+            setTimeout(function () {
+                location.reload()
+            }, 1000);
+        })
+    } else {
         if ($('#msg_dash_t')) {
             $('#msg_dash_t').remove()
         }
-        $('#msg_dash').append("<div id=\"msg_dash_t\">更新成功</div>")
-        setTimeout(function () {
-            location.reload()
-        }, 1000);
-    })
-
-
-
-
+        if ($('#msg_dash_t_error')) {
+            $('#msg_dash_t_error').remove()
+        }
+        $('#msg_dash').append("<div id=\"msg_dash_t_error\">Bio 字數不能大於 100。</div>")
+    }
 
 })
 
-// 如果用戶有個人網址就 innerHTML
+// 如果用戶有 個人網址 或 Bio 就 innerHTML
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         db.collection("users").doc(user.uid).get().then((doc) => {
             if (doc.data().url != undefined) {
                 $('#userUrl').val(doc.data().url)
+            }
+            if (doc.data().bio != undefined) {
+                $('#userBio').val(doc.data().bio)
+                // Limit display current length of bio
+                userBioLimit.html(doc.data().bio.length)
             }
         });
     }
@@ -86,6 +103,7 @@ avatarUpload.on('change', (e) => {
         var file = avatarUpload.get(0).files[0],
             reader = new FileReader();
 
+            // Preview
         reader.onload = function (event) {
             avatarPreview.css('background-image', 'url(' + event.target.result + ')');
         }
@@ -147,4 +165,10 @@ avatarAccept.on('click', (e) => {
 // 關閉按鈕
 uploadedBtn.on('click', (e) => {
     uploadBox.hide()
+})
+
+// User Bio
+// Limit
+userBio.on('input', (e) => {
+    userBioLimit.html(userBio.val().length)
 })
