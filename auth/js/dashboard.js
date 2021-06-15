@@ -1,12 +1,9 @@
 // var
 var userPersonalUrlInput = $('#userUrl')
-var uploadBtn = $('#uploadBtn')
 var uploadBox = $('#uploadBox')
 var avatarUpload = $('#avatarUpload')
 var avatarPreview = $('#avatarPreview')
-var avatarPreviewCancel = $('#avatarPreviewCancel')
 var avatarAccept = $('#avatarAccept')
-var uploadedBtn = $('#uploadedBtn')
 var userBio = $('#userBio')
 var userBioLimit = $('#userBioLimit')
 
@@ -18,9 +15,10 @@ auth.onAuthStateChanged(user => {
     }
     if (user.photoURL == null) {
         $('.profile-avatar').attr("src", "https://cdn.jsdelivr.net/gh/tszhong0411/image/auth/none.png")
+        $('#avatarPreview').attr("src", "https://cdn.jsdelivr.net/gh/tszhong0411/image/auth/none.png")
     } else {
         $('.profile-avatar').attr("src", user.photoURL)
-        $('#photoLink').attr("value", user.photoURL)
+        $('#avatarPreview').attr("src", user.photoURL)
     }
     if (user.displayName !== null) {
         $('#screenName-0-1').attr("value", user.displayName)
@@ -44,7 +42,6 @@ $('#update-form').on('submit', (e) => {
         // Update profile
         auth.currentUser.updateProfile({
             displayName: $('#screenName-0-1').val(),
-            photoURL: $('#photoLink').val()
 
         }).then(function () {
             if ($('#msg_dash_t')) {
@@ -53,7 +50,15 @@ $('#update-form').on('submit', (e) => {
             if ($('#msg_dash_t_error')) {
                 $('#msg_dash_t_error').remove()
             }
-            $('#msg_dash').append("<div id=\"msg_dash_t\">更新成功</div>")
+            if (localStorage.getItem("lan") == undefined) {
+                $('#msg_dash').append("<div id=\"msg_dash_t\">Successfully Update</div>");
+            };
+            if (localStorage.getItem("lan") == "en-US") {
+                $('#msg_dash').append("<div id=\"msg_dash_t\">Successfully Update</div>");
+            }
+            if (localStorage.getItem("lan") == "zh-TW") {
+                $('#msg_dash').append("<div id=\"msg_dash_t\">更新成功</div>");
+            }
             setTimeout(function () {
                 location.reload()
             }, 1000);
@@ -65,7 +70,15 @@ $('#update-form').on('submit', (e) => {
         if ($('#msg_dash_t_error')) {
             $('#msg_dash_t_error').remove()
         }
-        $('#msg_dash').append("<div id=\"msg_dash_t_error\">Bio 字數不能大於 100。</div>")
+        if (localStorage.getItem("lan") == undefined) {
+            $('#msg_dash').append("<div id=\"msg_dash_t\">Bio words can't greater than 100</div>");
+        };
+        if (localStorage.getItem("lan") == "en-US") {
+            $('#msg_dash').append("<div id=\"msg_dash_t\">Bio words can't greater than 100</div>");
+        }
+        if (localStorage.getItem("lan") == "zh-TW") {
+            $('#msg_dash').append("<div id=\"msg_dash_t_error\">Bio 字數不能大於 100。</div>")
+        }
     }
 
 })
@@ -86,17 +99,15 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
-// Upload avatar function
-uploadBtn.on('click', (e) => {
-    uploadBox.toggle()
-})
 
 avatarUpload.on('change', (e) => {
 
     e.preventDefault();
 
-    if (avatarUpload.val() == "") {
-        avatarPreview.attr("style", "")
+    if (avatarUpload.val() == "" && auth.currentUser.photoURL == null) {
+        avatarPreview.attr("src", "https://cdn.jsdelivr.net/gh/tszhong0411/image/auth/none.png")
+    } else {
+        avatarPreview.attr("src", auth.currentUser.photoURL)
     }
 
     if (avatarUpload.val() !== "") {
@@ -105,7 +116,7 @@ avatarUpload.on('change', (e) => {
 
         // Preview
         reader.onload = function (event) {
-            avatarPreview.css('background-image', 'url(' + event.target.result + ')');
+            avatarPreview.attr('src', event.target.result);
         }
         reader.readAsDataURL(file);
 
@@ -114,20 +125,6 @@ avatarUpload.on('change', (e) => {
 
 
 })
-
-// Cancel
-avatarPreviewCancel.on('click', (e) => {
-    uploadBox.hide()
-    avatarUpload.val("")
-    avatarPreview.attr("style", "")
-    if ($('.msg-success')) {
-        $('.msg-success').remove()
-    }
-    if ($('.msg-error')) {
-        $('.msg-error').remove()
-    }
-})
-
 
 // Upload
 avatarAccept.on('click', (e) => {
@@ -141,40 +138,72 @@ avatarAccept.on('click', (e) => {
                 imageExtensionMatch && imageExtensionMatch[1] !== 'jpg' ?
                 imageExtensionMatch[1] :
                 'jpeg'
-            var fileName = file.name.replace(/.*\.(\w+)?$/, 'avatar.$1')
             var storageRefOfAvatar = firebase.storage().ref('user/' + auth.currentUser.uid + '/avatar/' + 'avatar' + '_' + auth.currentUser.uid + '.' + imageExtension)
             storageRefOfAvatar.put(file).then(function () {
-                
-                $('#photoLink').val(`https://firebasestorage.googleapis.com/v0/b/auth-development-57e87.appspot.com/o/user%2F${auth.currentUser.uid}%2Favatar%2Favatar_${auth.currentUser.uid}.${imageExtension}?alt=media`)
-                if ($('.msg-success')) {
-                    $('.msg-success').remove()
+                auth.currentUser.updateProfile({
+                    photoURL: `https://firebasestorage.googleapis.com/v0/b/auth-development-57e87.appspot.com/o/user%2F${auth.currentUser.uid}%2Favatar%2Favatar_${auth.currentUser.uid}.${imageExtension}?alt=media`,
+        
+                })
+                if ($('#msg_dash_t')) {
+                    $('#msg_dash_t').remove()
+                } 
+                if ($('#msg_dash_t_error')) {
+                    $('#msg_dash_t_error').remove()
                 }
-                $('#msg_of_avatar').html('<div class="msg-success"><p>連結已自動貼上，請按 更新我的檔案。</p></div>')
-                $('#notUploaded').hide()
-                $('#uploaded').show()
+                if (localStorage.getItem("lan") == undefined) {
+                    $('#msg_dash').append("<div id=\"msg_dash_t\">Successfully update avatar</div>")
+                };
+                if (localStorage.getItem("lan") == "en-US") {
+                    $('#msg_dash').append("<div id=\"msg_dash_t\">Successfully update avatar</div>")
+                }
+                if (localStorage.getItem("lan") == "zh-TW") {
+                    $('#msg_dash').append("<div id=\"msg_dash_t\">頭像已更新</div>")
+                }
+                setTimeout(function() {
+                    window.location.reload()
+                }, 1500)
              
             })
         } else {
-            if ($('.msg-error')) {
-                $('.msg-error').remove()
+            if ($('#msg_dash_t')) {
+                $('#msg_dash_t').remove()
             }
-            $('#msg_of_avatar').html('<div class="msg-error"><p>檔案不能大於 1 MB。</p></div>')
+            if ($('#msg_dash_t_error')) {
+                $('#msg_dash_t_error').remove()
+            }
+            if (localStorage.getItem("lan") == undefined) {
+                $('#msg_dash').append("<div id=\"msg_dash_t_error\">The file cannot be larger than 1 MB.</div>")
+            };
+            if (localStorage.getItem("lan") == "en-US") {
+                $('#msg_dash').append("<div id=\"msg_dash_t_error\">The file cannot be larger than 1 MB.</div>")
+            }
+            if (localStorage.getItem("lan") == "zh-TW") {
+                $('#msg_dash').append("<div id=\"msg_dash_t_error\">檔案不能大於 1 MB。</div>")
+            }
+           
         }
     } else {
-        if ($('.msg-error')) {
-            $('.msg-error').remove()
+        if ($('#msg_dash_t')) {
+            $('#msg_dash_t').remove()
         }
-        $('#msg_of_avatar').html('<div class="msg-error"><p>請選擇檔案。</p></div>')
+        if ($('#msg_dash_t_error')) {
+            $('#msg_dash_t_error').remove()
+        }
+        if (localStorage.getItem("lan") == undefined) {
+            $('#msg_dash').append("<div id=\"msg_dash_t_error\">Please select a file.</div>")
+        };
+        if (localStorage.getItem("lan") == "en-US") {
+            $('#msg_dash').append("<div id=\"msg_dash_t_error\">Please select a file.</div>")
+        }
+        if (localStorage.getItem("lan") == "zh-TW") {
+            $('#msg_dash').append("<div id=\"msg_dash_t_error\">請選擇檔案。</div>")
+        }
+        
     }
-})
-
-// 關閉按鈕
-uploadedBtn.on('click', (e) => {
-    uploadBox.hide()
 })
 
 // User Bio
 // Limit
-userBio.on('input', (e) => {
+userBio.on('input', () => {
     userBioLimit.html(userBio.val().length)
 })
