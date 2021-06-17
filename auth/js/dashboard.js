@@ -4,8 +4,13 @@ var uploadBox = $('#uploadBox')
 var avatarUpload = $('#avatarUpload')
 var avatarPreview = $('#avatarPreview')
 var avatarAccept = $('#avatarAccept')
-var userBio = $('#userBio')
-var userBioLimit = $('#userBioLimit')
+var userWhatDoYouDo = $('#userWhatDoYouDo')
+var userUrlGithub = $('#userUrlGithub')
+var userUrlTwitter = $('#userUrlTwitter')
+var userUrlInstagram = $('#userUrlInstagram')
+var userUrlFacebook = $('#userUrlFacebook')
+var username = $('#username')
+var country = $('#country')
 
 // Listen for auth status
 auth.onAuthStateChanged(user => {
@@ -22,21 +27,71 @@ auth.onAuthStateChanged(user => {
     }
     if (user.displayName !== null) {
         $('#screenName-0-1').attr("value", user.displayName)
-        $('#username').html(user.displayName)
+        $('#displayname').html(user.displayName)
     }
+    db.collection("users").doc(user.uid).get().then((doc) => {
+        if (doc.data().usernameIsSet == "false") {
+            $('username-submit-btn').removeAttr("disabled")
+        }
+        if (doc.data().usernameIsSet == "true") {
+            $('#profile-url').attr('href', `/users/?username=${doc.data().username}`)
+        } else {
+            $('#profile-url').attr('href', `/users/?username=${user.uid}`)
+        }
+    })
 })
 
 // Update info
 $('#update-form').on('submit', (e) => {
     e.preventDefault();
 
-    // Save user personal url
-    if (userBio.val().length <= 100) {
-        db.doc('users/' + auth.currentUser.uid).set({
-            url: userPersonalUrlInput.val(),
-            email: auth.currentUser.email,
-            bio: userBio.val()
-        })
+    // Save all
+    db.collection("users").doc(auth.currentUser.uid).get().then((doc) => {
+        if (doc.data().username != undefined) {
+            db.doc('users/' + auth.currentUser.uid).set({
+                url: userPersonalUrlInput.val(),
+                email: auth.currentUser.email,
+                WhatDoYouDo: userWhatDoYouDo.val(),
+                github: userUrlGithub.val(),
+                twitter: userUrlTwitter.val(),
+                instagram: userUrlInstagram.val(),
+                facebook: userUrlFacebook.val(),
+                username: username.val(),
+                avatarUrl: auth.currentUser.photoURL,
+                usernameIsSet: "true",
+                country: country.val()
+                
+            })
+            db.doc('userPublic/' + doc.data().username).set({
+                url: userPersonalUrlInput.val(),
+                email: auth.currentUser.email,
+                WhatDoYouDo: userWhatDoYouDo.val(),
+                github: userUrlGithub.val(),
+                twitter: userUrlTwitter.val(),
+                instagram: userUrlInstagram.val(),
+                facebook: userUrlFacebook.val(),
+                username: username.val(),
+                avatarUrl: auth.currentUser.photoURL,
+                usernameIsSet: "true",
+                country: country.val()
+            })
+        } else {
+            db.doc('users/' + auth.currentUser.uid).set({
+                url: userPersonalUrlInput.val(),
+                email: auth.currentUser.email,
+                WhatDoYouDo: userWhatDoYouDo.val(),
+                github: userUrlGithub.val(),
+                twitter: userUrlTwitter.val(),
+                instagram: userUrlInstagram.val(),
+                facebook: userUrlFacebook.val(),
+                avatarUrl: auth.currentUser.photoURL,
+                usernameIsSet: "false",
+                country: country.val()
+            })
+        }
+    })
+        
+ 
 
 
         // Update profile
@@ -63,37 +118,39 @@ $('#update-form').on('submit', (e) => {
                 location.reload()
             }, 1000);
         })
-    } else {
-        if ($('#msg_dash_t')) {
-            $('#msg_dash_t').remove()
-        }
-        if ($('#msg_dash_t_error')) {
-            $('#msg_dash_t_error').remove()
-        }
-        if (localStorage.getItem("lan") == undefined) {
-            $('#msg_dash').append("<div id=\"msg_dash_t\">Bio words can't greater than 100</div>");
-        };
-        if (localStorage.getItem("lan") == "en-US") {
-            $('#msg_dash').append("<div id=\"msg_dash_t\">Bio words can't greater than 100</div>");
-        }
-        if (localStorage.getItem("lan") == "zh-TW") {
-            $('#msg_dash').append("<div id=\"msg_dash_t_error\">Bio 字數不能大於 100。</div>")
-        }
-    }
 
 })
 
-// 如果用戶有 個人網址 或 Bio 就 innerHTML
+// innerHTML
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         db.collection("users").doc(user.uid).get().then((doc) => {
             if (doc.data().url != undefined) {
                 $('#userUrl').val(doc.data().url)
             }
-            if (doc.data().bio != undefined) {
-                $('#userBio').val(doc.data().bio)
-                // Limit display current length of bio
-                userBioLimit.html(doc.data().bio.length)
+            if (doc.data().WhatDoYouDo != undefined) {
+                $('#userWhatDoYouDo').val(doc.data().WhatDoYouDo)
+            }
+            if (doc.data().github != undefined) {
+                $('#userUrlGithub').val(doc.data().github)
+            }
+            if (doc.data().twitter != undefined) {
+                $('#userUrlTwitter').val(doc.data().twitter)
+            }
+            if (doc.data().facebook != undefined) {
+                $('#userUrlFacebook').val(doc.data().facebook)
+            }
+            if (doc.data().instagram != undefined) {
+                $('#userUrlInstagram').val(doc.data().instagram)
+            }
+            if (doc.data().username == undefined) {
+                $('#username-submit-btn').removeAttr("disabled")
+            } else {
+                $('#username').val(doc.data().username)
+                $('#username').attr("readonly", "")
+            }
+            if (doc.data().country != undefined) {
+                $('#country').val(doc.data().country)
             }
         });
     }
@@ -202,8 +259,97 @@ avatarAccept.on('click', (e) => {
     }
 })
 
-// User Bio
-// Limit
-userBio.on('input', () => {
-    userBioLimit.html(userBio.val().length)
+// Set username
+$('#username-submit-btn').on('click', () => {
+    if (confirm(`Username cannot be changed once set. Are you sure you want to set "${username.val()}"?`) == true) {
+        db.collection("users").doc(auth.currentUser.uid).get().then((doc) => {
+            if (doc.data().usernameIsSet == "false") {
+                
+                db.collection("userPublic").doc(username.val()).get().then((doc) => {
+                    if (doc.data() == undefined) {
+                        db.doc('userPublic/' + username.val()).set({
+                            url: userPersonalUrlInput.val(),
+                            email: auth.currentUser.email,
+                            WhatDoYouDo: userWhatDoYouDo.val(),
+                            github: userUrlGithub.val(),
+                            twitter: userUrlTwitter.val(),
+                            instagram: userUrlInstagram.val(),
+                            facebook: userUrlFacebook.val(),
+                            usernameIsSet: "true",
+                            username: username.val(),
+                            avatarUrl: auth.currentUser.photoURL,
+                            country: country.val()
+                        })
+                        db.doc('users/' + auth.currentUser.uid).set({
+                            url: userPersonalUrlInput.val(),
+                            email: auth.currentUser.email,
+                            WhatDoYouDo: userWhatDoYouDo.val(),
+                            github: userUrlGithub.val(),
+                            twitter: userUrlTwitter.val(),
+                            instagram: userUrlInstagram.val(),
+                            facebook: userUrlFacebook.val(),
+                            usernameIsSet: "true",
+                            username: username.val(),
+                            avatarUrl: auth.currentUser.photoURL,
+                            country: country.val()
+                        })
+                        if ($('.username_msg_box_error')) {
+                            $('.username_msg_box_error').remove()
+                        }
+                        
+                        if (localStorage.getItem("lan") == undefined) {
+                            $('#username_msg_box').append('<div class="username_msg_box_success"><p>Successfully</p></div>')
+                        };
+                        if (localStorage.getItem("lan") == "en-US") {
+                            $('#username_msg_box').append('<div class="username_msg_box_success"><p>Successfully</p></div>')
+                        }
+                        if (localStorage.getItem("lan") == "zh-TW") {
+                            $('#username_msg_box').append('<div class="username_msg_box_success"><p>成功</p></div>')
+                        }
+                        setTimeout(function() {
+                            window.location.reload()
+                        }, 1500)
+                    } else {
+
+
+                        if ($('.username_msg_box_error')) {
+                            $('.username_msg_box_error').remove()
+                        }
+    
+                        if (localStorage.getItem("lan") == undefined) {
+                            $('#username_msg_box').append('<div class="username_msg_box_error"><p>This username is already taken</p></div>')
+                        };
+                        if (localStorage.getItem("lan") == "en-US") {
+                            $('#username_msg_box').append('<div class="username_msg_box_error"><p>This username is already taken</p></div>')
+                        }
+                        if (localStorage.getItem("lan") == "zh-TW") {
+                            $('#username_msg_box').append('<div class="username_msg_box_error"><p>此用戶名已被使用</p></div>')
+                        }
+                    }
+                })
+
+
+            } else {
+
+                alert("You already have username.")
+
+            }
+
+        })
+        
+    }
+        
 })
+
+// Search
+// Get the input field
+var searchBox = $("#search-box");
+
+searchBox.on('keypress', function (e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+
+        // code for enter
+        window.location = `/users/?username=${searchBox.val()}`
+    }
+});

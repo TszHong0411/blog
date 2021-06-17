@@ -64,6 +64,15 @@ auth.onAuthStateChanged(user => {
     } else {
       $('#userAvatar').attr("src", "https://cdn.jsdelivr.net/gh/tszhong0411/image/auth/none.png")
     }
+    
+    db.collection("users").doc(user.uid).get().then((doc) => {
+      if (doc.data().usernameIsSet == "true") {
+        $('#userProfileUrl').attr("href", `/users/?username=${doc.data().username}`)
+      } else {
+        $('#userProfileUrl').attr("href", `/users/?username=${user.uid}`)
+      }
+    })
+
   }
 })
 

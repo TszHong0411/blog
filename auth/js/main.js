@@ -108,10 +108,11 @@ if (document.querySelector('#signup-form')) {
 			}
 			msg.append(msg_success_t);
 			db.doc('users/' + auth.currentUser.uid).set({
-				email: email
+				email: email,
+				usernameIsSet: "false"
 			})
 		}).catch(error => {
-			msg.	css("display", "block")
+			msg.css("display", "block")
 			if ($('.msg-error')) {
 				$('.msg-error').remove()
 			}
@@ -137,7 +138,7 @@ const logout = $('#logout');
 logout.on('click', (e) => {
 	e.preventDefault();
 	auth.signOut().then(() => {
-		window.location.replace('/auth/index.html')
+		window.location = '/auth/index.html'
 	}).catch(error => {
 		msg.css("display", "block")
 		if ($('.msg-error')) {
@@ -161,7 +162,14 @@ if (document.querySelector('#login-form')) {
 		const password = loginForm['login-password'].value
 
 		auth.signInWithEmailAndPassword(email, password).then(cred => {
-			window.location.replace('/')
+			db.collection("users").doc(user.uid).get().then((doc) => {
+				if (doc.data().usernameIsSet == "false") {
+					window.location.replace("/users/?username=" + user.uid)
+				}
+				if (doc.data().usernameIsSet == "true") {
+					window.location.replace("/users/?username=" + doc.data().username)
+				}
+			});
 		}).catch(error => {
 			msg.css("display", "block")
 			if ($('.msg-error')) {
@@ -189,166 +197,174 @@ if ($('#fullYear')) {
 }
 
 // Float
-  
-  // Main Darkmode
-  function setDarkmode(enable) {
+
+// Main Darkmode
+function setDarkmode(enable) {
 	if (enable == true) {
-	  $("html").addClass("darkmode");
+		$("html").addClass("darkmode");
 	} else {
-	  $("html").removeClass("darkmode");
+		$("html").removeClass("darkmode");
 	}
-  }
-  
-  function toggleDarkmode() {
+}
+
+function toggleDarkmode() {
 	if ($('html').hasClass("darkmode")) {
-	  setDarkmode(false);
-	  localStorage.setItem("darkmode", "false");
-	  if (localStorage.getItem("lan") == undefined) {
-		Snackbar.show({
-		  text: 'Light Mode Activated Manually.',
-		  showAction: false,
-		  pos: 'top-right',
-		  backgroundColor: '#fff',
-		  textColor: '#FF4040'
-		});
-	  };
-	  if (localStorage.getItem("lan") == "en-US") {
-		Snackbar.show({
-		  text: 'Light Mode Activated Manually.',
-		  showAction: false,
-		  pos: 'top-right',
-		  backgroundColor: '#fff',
-		  textColor: '#FF4040'
-		});
-	  }
-	  if (localStorage.getItem("lan") == "zh-TW") {
-		Snackbar.show({
-		  text: '你已切換到明亮模式。',
-		  showAction: false,
-		  pos: 'top-right',
-		  backgroundColor: '#fff',
-		  textColor: '#FF4040'
-		});
-	  }
-	  
+		setDarkmode(false);
+		localStorage.setItem("darkmode", "false");
+		if (localStorage.getItem("lan") == undefined) {
+			Snackbar.show({
+				text: 'Light Mode Activated Manually.',
+				showAction: false,
+				pos: 'top-right',
+				backgroundColor: '#fff',
+				textColor: '#FF4040'
+			});
+		};
+		if (localStorage.getItem("lan") == "en-US") {
+			Snackbar.show({
+				text: 'Light Mode Activated Manually.',
+				showAction: false,
+				pos: 'top-right',
+				backgroundColor: '#fff',
+				textColor: '#FF4040'
+			});
+		}
+		if (localStorage.getItem("lan") == "zh-TW") {
+			Snackbar.show({
+				text: '你已切換到明亮模式。',
+				showAction: false,
+				pos: 'top-right',
+				backgroundColor: '#fff',
+				textColor: '#FF4040'
+			});
+		}
+
 	} else {
-	  setDarkmode(true);
-	  localStorage.setItem("darkmode", "true")
-	  if (localStorage.getItem("lan") == undefined) {
-		Snackbar.show({
-		  text: 'Dark Mode Activated Manually.',
-		  showAction: false,
-		  pos: 'top-right',
-		  backgroundColor: '#353535'
-		});
-	  };
-	  if (localStorage.getItem("lan") == "en-US") {
-		Snackbar.show({
-		  text: 'Dark Mode Activated Manually.',
-		  showAction: false,
-		  pos: 'top-right',
-		  backgroundColor: '#353535'
-	  });
-	  }
-	  if (localStorage.getItem("lan") == "zh-TW") {
-		Snackbar.show({
-		  text: '你已切換到黑暗模式。',
-		  showAction: false,
-		  pos: 'top-right',
-		  backgroundColor: '#353535'
-	  });
-	  }
+		setDarkmode(true);
+		localStorage.setItem("darkmode", "true")
+		if (localStorage.getItem("lan") == undefined) {
+			Snackbar.show({
+				text: 'Dark Mode Activated Manually.',
+				showAction: false,
+				pos: 'top-right',
+				backgroundColor: '#353535'
+			});
+		};
+		if (localStorage.getItem("lan") == "en-US") {
+			Snackbar.show({
+				text: 'Dark Mode Activated Manually.',
+				showAction: false,
+				pos: 'top-right',
+				backgroundColor: '#353535'
+			});
+		}
+		if (localStorage.getItem("lan") == "zh-TW") {
+			Snackbar.show({
+				text: '你已切換到黑暗模式。',
+				showAction: false,
+				pos: 'top-right',
+				backgroundColor: '#353535'
+			});
+		}
 	}
-  }
-  if (localStorage.getItem("darkmode") == "true") {
+}
+if (localStorage.getItem("darkmode") == "true") {
 	setDarkmode(true);
-  }
-  
-  // 設置視窗
-  function settingsPopup() {
+}
+
+// 設置視窗
+function settingsPopup() {
 	let settingsBtn = $('#show_settings');
 	let settingsPopup = $('#settings_popup');
 	let settingsClose = $('#close_settings_popup');
-  
+
 	// Open settings
 	settingsBtn.bind('click', function () {
-	  if (settingsPopup.hasClass('settings_popup_open')) {
-		$('#tooltipS').remove();
-		settingsPopup.removeClass('settings_popup_open');
-	  } else {
-		settingsPopup.addClass('settings_popup_open');
-		$('head').append('<style id="tooltipS">#reading_progress:hover::before{display:none!important}</style>');
-	  };
+		if (settingsPopup.hasClass('settings_popup_open')) {
+			$('#tooltipS').remove();
+			settingsPopup.removeClass('settings_popup_open');
+		} else {
+			settingsPopup.addClass('settings_popup_open');
+			$('head').append('<style id="tooltipS">#reading_progress:hover::before{display:none!important}</style>');
+		};
 	});
-  
+
 	// Close settings
 	settingsClose.bind('click', function () {
-	  settingsPopup.removeClass('settings_popup_open')
-	  $('#tooltipS').remove();
+		settingsPopup.removeClass('settings_popup_open')
+		$('#tooltipS').remove();
 	});
-  
-  
+
+
 	// Darkmode Toggle 1
 	$('#settings_darkmode_switch').bind('click', function () {
-	  toggleDarkmode();
+		toggleDarkmode();
 	})
-  
+
 	// Darkmode Toggle 2
-	$('#darkmode_toggle').bind('click', function() {
-	  toggleDarkmode();
+	$('#darkmode_toggle').bind('click', function () {
+		toggleDarkmode();
 	});
-  
+
 	// Font
 	$("#setting_font_sans_serif").on("click", function () {
-	  $("html").removeClass("use-serif");
-	  localStorage['Use_Serif'] = "false";
+		$("html").removeClass("use-serif");
+		localStorage['Use_Serif'] = "false";
 	});
 	$("#setting_font_serif").on("click", function () {
-	  $("html").addClass("use-serif");
-	  localStorage['Use_Serif'] = "true";
+		$("html").addClass("use-serif");
+		localStorage['Use_Serif'] = "true";
 	});
 	if (localStorage['Use_Serif'] == "true") {
-	  $("html").addClass("use-serif");
+		$("html").addClass("use-serif");
 	} else if (localStorage['Use_Serif'] == "false") {
-	  $("html").removeClass("use-serif");
+		$("html").removeClass("use-serif");
 	}
-  };
-  settingsPopup();
+};
+settingsPopup();
 
-  // Float Settings location
+// Float Settings location
 let float_btn = $('#float_btn')
 if (localStorage['Floating_Status'] == "left") {
-  float_btn.addClass("float-left");
+	float_btn.addClass("float-left");
 }
-$('#btn_toggle_sides').on("click" , function(){
-  float_btn.addClass("float-unloaded");
-  setTimeout(function(){
-    float_btn.toggleClass("float-left");
-    if (float_btn.hasClass("float-left")){
-      localStorage['Floating_Status'] = "left";
-    }else{
-      localStorage['Floating_Status'] = "right";
-    }
-    float_btn.removeClass("float-unloaded");
-  } , 300);
+$('#btn_toggle_sides').on("click", function () {
+	float_btn.addClass("float-unloaded");
+	setTimeout(function () {
+		float_btn.toggleClass("float-left");
+		if (float_btn.hasClass("float-left")) {
+			localStorage['Floating_Status'] = "left";
+		} else {
+			localStorage['Floating_Status'] = "right";
+		}
+		float_btn.removeClass("float-unloaded");
+	}, 300);
 });
 
 // Filter
-function setBlogFilter(name){
-  if (name == undefined || name == ""){
-    name = "off";
-  }
-  if (!$("html").hasClass("filter-" + name)){
-    $("html").removeClass("filter-sunset filter-darkness filter-grayscale");
-    if (name != "off"){
-      $("html").addClass("filter-" + name);
-    }
-  }
-  $("#setting_filters .setting-filter-btn").removeClass("active");
-  $("#setting_filters .setting-filter-btn[filter-name='" + name + "']").addClass("active");
-  localStorage['Filter'] = name;
+function setBlogFilter(name) {
+	if (name == undefined || name == "") {
+		name = "off";
+	}
+	if (!$("html").hasClass("filter-" + name)) {
+		$("html").removeClass("filter-sunset filter-darkness filter-grayscale");
+		if (name != "off") {
+			$("html").addClass("filter-" + name);
+		}
+	}
+	$("#setting_filters .setting-filter-btn").removeClass("active");
+	$("#setting_filters .setting-filter-btn[filter-name='" + name + "']").addClass("active");
+	localStorage['Filter'] = name;
 }
 setBlogFilter(localStorage['Filter']);
-$(".setting-filter-btn").on("click" , function(){
-  setBlogFilter(this.getAttribute("filter-name"));
+$(".setting-filter-btn").on("click", function () {
+	setBlogFilter(this.getAttribute("filter-name"));
 });
+
+// Logout of nav
+$('#nav-logout').on('click', () => {
+	auth.signOut().then(() => {
+		window.location = ('/auth/index.html')
+	})
+})
+
