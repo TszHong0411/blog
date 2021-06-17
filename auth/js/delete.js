@@ -10,25 +10,56 @@ $('#delete-form').on('submit', (e) => {
         var credential = firebase.auth.EmailAuthProvider.credential(email, password)
 
         user.reauthenticateWithCredential(credential).then(function () {
-            user.delete().then(function () {
-                msg.css("display", "block")
-                if ($('.msg-error')) {
-                    $('.msg-error').remove()
+
+            db.collection("users").doc(auth.currentUser.uid).get().then((doc) => {
+                if (doc.data().usernameIsSet == "true") {
+                    db.collection('userPublic').doc(doc.data().username).delete().then(
+                        db.collection('users').doc(auth.currentUser.uid).delete().then(
+                            user.delete().then(function () {
+                                msg.css("display", "block")
+                                if ($('.msg-error')) {
+                                    $('.msg-error').remove()
+                                }
+                                if ($('.msg-success')) {
+                                    $('.msg-success').remove()
+                                }
+                                msg.append(msg_delete_account);
+                            }).catch(error => {
+                                msg.css("display", "block")
+                                if ($('.msg-error')) {
+                                    $('.msg-error').remove()
+                                }
+                                if ($('.msg-success')) {
+                                    $('.msg-success').remove()
+                                }
+                                msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
+                            })
+                        )
+                    )
+                } else {
+                    db.collection('users').doc(auth.currentUser.uid).delete().then(
+                        user.delete().then(function () {
+                            msg.css("display", "block")
+                            if ($('.msg-error')) {
+                                $('.msg-error').remove()
+                            }
+                            if ($('.msg-success')) {
+                                $('.msg-success').remove()
+                            }
+                            msg.append(msg_delete_account);
+                        }).catch(error => {
+                            msg.css("display", "block")
+                            if ($('.msg-error')) {
+                                $('.msg-error').remove()
+                            }
+                            if ($('.msg-success')) {
+                                $('.msg-success').remove()
+                            }
+                            msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
+                        })
+                    )
                 }
-                if ($('.msg-success')) {
-                    $('.msg-success').remove()
-                }
-                msg.append(msg_delete_account);
-            }).catch(error => {
-                msg.css("display", "block")
-                if ($('.msg-error')) {
-                    $('.msg-error').remove()
-                }
-                if ($('.msg-success')) {
-                    $('.msg-success').remove()
-                }
-                msg.append('<div class="msg-error"><p>' + error.message + '</p></p></div>');
-            });
+            })
         }).catch(error => {
             msg.css("display", "block")
             if ($('.msg-error')) {
