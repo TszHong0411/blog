@@ -59,7 +59,8 @@ $('#update-form').on('submit', (e) => {
                 username: username.val(),
                 avatarUrl: auth.currentUser.photoURL,
                 usernameIsSet: "true",
-                country: country.val()
+                country: country.val(),
+                uid: auth.currentUser.uid
                 
             })
             db.doc('userPublic/' + doc.data().username).set({
@@ -73,7 +74,8 @@ $('#update-form').on('submit', (e) => {
                 username: username.val(),
                 avatarUrl: auth.currentUser.photoURL,
                 usernameIsSet: "true",
-                country: country.val()
+                country: country.val(),
+                uid: auth.currentUser.uid
             })
         } else {
             db.doc('users/' + auth.currentUser.uid).set({
@@ -86,7 +88,8 @@ $('#update-form').on('submit', (e) => {
                 facebook: userUrlFacebook.val(),
                 avatarUrl: auth.currentUser.photoURL,
                 usernameIsSet: "false",
-                country: country.val()
+                country: country.val(),
+                uid: auth.currentUser.uid
             })
         }
     })
