@@ -15,21 +15,9 @@ Github io:
 
 https://cdn.jsdelivr.net/gh/tszhong0411/image/record-github-io.png
 
-Last Update: 2021 / 06 / 10 20:38
+Last Update: 2021 / 06 / 18 16:48
 
 */
-// 推送公告
-if (localStorage.getItem('tipRead') == undefined || localStorage.getItem('tipRead') == false) {
-  $('body').append("<div class=\"note info flat\" id=\"tipBox\" style=\"display:none;\"><p>最新公告: 本站已開放 登入 和 註冊</p><i class=\"fas fa-times-circle\" id=\"tipBoxClose\"></i></div>")
-  $(document).ready(function() {
-    $('#tipBox').fadeIn(2500)
-  })
-  $('#tipBoxClose').on('click', (e) => {
-    $('#tipBox').hide()
-    localStorage.setItem("tipRead", "true")
-  })
-}
-
 $(document).ready(function() {
     var int = setInterval(fixCount, 50);
     var int1 = setInterval(fixCount1, 50);
