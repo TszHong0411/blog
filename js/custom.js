@@ -504,3 +504,18 @@ function Pop() {
   };
 }
 window.start = new Pop();
+
+// About page
+function terminal_about() {
+  var a = new Date()
+  var month = a.getMonth()+1
+  var current_time = a.getFullYear() + "-" + month + "-" + a.getDate()
+  $('.gutter').remove()
+  $('.code-lang').html('bash')
+  $('#article-container > figure > table > tbody > tr > td > pre > span:nth-child(5)').html('<span style="padding: 2px 3px;color: #fff;background:#999;">System</span> 感謝您的光臨，讓我自我介紹一下。')
+  $('#article-container > figure > table > tbody > tr > td > pre > span:nth-child(7)').html("<span style=\"padding: 2px 3px;color: #fff;background: #666262;\">" + current_time + "</span>" + " " + "<span style=\"padding: 2px 3px;background: #2980b9;color: #fff;\">Name:</span> Lai Tsz Hong")
+  $('#article-container > figure > table > tbody > tr > td > pre > span:nth-child(9)').html("<span style=\"padding: 2px 3px;color: #fff;background: #666262;\">" + current_time + "</span>" + " " + "<span style=\"padding: 2px 3px;background: #2980b9;color: #fff;\">Sex:</span> Male")
+  $('#article-container > figure > table > tbody > tr > td > pre > span:nth-child(11)').html("<span style=\"padding: 2px 3px;color: #fff;background: #666262;\">" + current_time + "</span>" + " " + "<span style=\"padding: 2px 3px;background: #2980b9;color: #fff;\">Address:</span> Hong Kong")
+  $('#article-container > figure > table > tbody > tr > td > pre > span:nth-child(13)').html("<span style=\"padding: 2px 3px;color: #fff;background: #666262;\">" + current_time + "</span>" + " " + "<span style=\"padding: 2px 3px;background: #2980b9;color: #fff;\">Email:</span> info@tszhong.top")
+  $('#article-container > figure > table > tbody > tr > td > pre > span:nth-child(15)').html("<span style=\"padding: 2px 3px;color: #fff;background: #27ae60;\">Done</span> 我的介紹結束了！")
+}
